@@ -1,0 +1,429 @@
+fileFormatVersion: 2
+guid: 0f945eb0b5403c14fbdb831a440c58bc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 9022490750825504325
+    second: Potato_tutorial_Sprt_0
+  - first:
+      213: 2868021617767716357
+    second: Potato_tutorial_Sprt_1
+  - first:
+      213: -8650875372890517335
+    second: Potato_tutorial_Sprt_2
+  - first:
+      213: 5196840446602246130
+    second: Potato_tutorial_Sprt_3
+  - first:
+      213: 7117776881348382020
+    second: Potato_tutorial_Sprt_4
+  - first:
+      213: 6330683163094815704
+    second: Potato_tutorial_Sprt_5
+  - first:
+      213: 5697372258166187027
+    second: Potato_tutorial_Sprt_6
+  - first:
+      213: 189199104819885034
+    second: Potato_tutorial_Sprt_7
+  - first:
+      213: 2728804613313358201
+    second: Potato_tutorial_Sprt_8
+  - first:
+      213: -7505620328821890806
+    second: Potato_tutorial_Sprt_9
+  - first:
+      213: 3882784369168153532
+    second: Potato_tutorial_Sprt_10
+  - first:
+      213: -8566537071111287264
+    second: Potato_tutorial_Sprt_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Potato_tutorial_Sprt_0
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 259
+        width: 62
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54e9330e883563d70800000000000000
+      internalID: 9022490750825504325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potato_tutorial_Sprt_1
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 224
+        width: 32
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5069f2747724dc720800000000000000
+      internalID: 2868021617767716357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potato_tutorial_Sprt_2
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 209
+        width: 92
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a09fa2ceaae1f780800000000000000
+      internalID: -8650875372890517335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potato_tutorial_Sprt_3
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 14
+        width: 142
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f7fb162ad2ee1840800000000000000
+      internalID: 5196840446602246130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potato_tutorial_Sprt_4
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 194
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44d024bac5c67c260800000000000000
+      internalID: 7117776881348382020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potato_tutorial_Sprt_5
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 199
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d310d1abca1bd750800000000000000
+      internalID: 6330683163094815704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potato_tutorial_Sprt_6
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 154
+        width: 27
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 314292102e1211f40800000000000000
+      internalID: 5697372258166187027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potato_tutorial_Sprt_7
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 199
+        width: 11
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae37c9a559b20a200800000000000000
+      internalID: 189199104819885034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potato_tutorial_Sprt_8
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 164
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9796df58659aed520800000000000000
+      internalID: 2728804613313358201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potato_tutorial_Sprt_9
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 174
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a01ee91d31ea6d790800000000000000
+      internalID: -7505620328821890806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potato_tutorial_Sprt_10
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 169
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbbf4b7dfcb62e530800000000000000
+      internalID: 3882784369168153532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potato_tutorial_Sprt_11
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 144
+        width: 7
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02e4239dbeb8d1980800000000000000
+      internalID: -8566537071111287264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Potato_tutorial_Sprt_0: 9022490750825504325
+      Potato_tutorial_Sprt_1: 2868021617767716357
+      Potato_tutorial_Sprt_10: 3882784369168153532
+      Potato_tutorial_Sprt_11: -8566537071111287264
+      Potato_tutorial_Sprt_2: -8650875372890517335
+      Potato_tutorial_Sprt_3: 5196840446602246130
+      Potato_tutorial_Sprt_4: 7117776881348382020
+      Potato_tutorial_Sprt_5: 6330683163094815704
+      Potato_tutorial_Sprt_6: 5697372258166187027
+      Potato_tutorial_Sprt_7: 189199104819885034
+      Potato_tutorial_Sprt_8: 2728804613313358201
+      Potato_tutorial_Sprt_9: -7505620328821890806
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

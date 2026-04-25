@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: 3b066bcfc8896e443bf47ab70f32f773
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2033467501735988070
+    second: jump_upgrade_SS_0
+  - first:
+      213: 4945444299267052981
+    second: jump_upgrade_SS_1
+  - first:
+      213: -5176453075954441114
+    second: jump_upgrade_SS_2
+  - first:
+      213: 7346929741063331586
+    second: jump_upgrade_SS_3
+  - first:
+      213: 2768893685590220169
+    second: jump_upgrade_SS_4
+  - first:
+      213: 2539304660313093769
+    second: jump_upgrade_SS_5
+  - first:
+      213: 1400469868383953980
+    second: jump_upgrade_SS_6
+  - first:
+      213: 2256086373411662365
+    second: jump_upgrade_SS_7
+  - first:
+      213: 5075013764908981879
+    second: jump_upgrade_SS_8
+  - first:
+      213: -3656724202784378817
+    second: jump_upgrade_SS_9
+  - first:
+      213: 4918895204788315719
+    second: jump_upgrade_SS_10
+  - first:
+      213: 6977086123269649453
+    second: jump_upgrade_SS_11
+  - first:
+      213: -1304658961600787420
+    second: jump_upgrade_SS_12
+  - first:
+      213: 2469535221901644776
+    second: jump_upgrade_SS_13
+  - first:
+      213: 4625899864911141922
+    second: jump_upgrade_SS_14
+  - first:
+      213: 622651669491263349
+    second: jump_upgrade_SS_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: jump_upgrade_SS_0
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 449
+        width: 212
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66b46474be3583c10800000000000000
+      internalID: 2033467501735988070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_upgrade_SS_1
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 449
+        width: 212
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b51b4a536fb1a440800000000000000
+      internalID: 4945444299267052981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_upgrade_SS_2
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 359
+        width: 92
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 664e14b7a5b8928b0800000000000000
+      internalID: -5176453075954441114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_upgrade_SS_3
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 359
+        width: 92
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20f15dd7ca985f560800000000000000
+      internalID: 7346929741063331586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_upgrade_SS_4
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 359
+        width: 92
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98d5d6603261d6620800000000000000
+      internalID: 2768893685590220169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_upgrade_SS_5
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 359
+        width: 92
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 986b47e722c6d3320800000000000000
+      internalID: 2539304660313093769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_upgrade_SS_6
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 359
+        width: 92
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c34e9afdce77f6310800000000000000
+      internalID: 1400469868383953980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_upgrade_SS_7
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 359
+        width: 92
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1a2dc57a9a3f4f10800000000000000
+      internalID: 2256086373411662365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_upgrade_SS_8
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 129
+        width: 212
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77e1e9f61221e6640800000000000000
+      internalID: 5075013764908981879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_upgrade_SS_9
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 129
+        width: 212
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f30b67336b4b04dc0800000000000000
+      internalID: -3656724202784378817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_upgrade_SS_10
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 39
+        width: 92
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 746a7c8902d634440800000000000000
+      internalID: 4918895204788315719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_upgrade_SS_11
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 39
+        width: 92
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d247bc8ecd693d060800000000000000
+      internalID: 6977086123269649453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_upgrade_SS_12
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 39
+        width: 92
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42c41c8369be4ede0800000000000000
+      internalID: -1304658961600787420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_upgrade_SS_13
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 39
+        width: 92
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e353cd333d854220800000000000000
+      internalID: 2469535221901644776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_upgrade_SS_14
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 39
+        width: 92
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22c5e860b6f723040800000000000000
+      internalID: 4625899864911141922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_upgrade_SS_15
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 39
+        width: 92
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 577a4daf46a14a800800000000000000
+      internalID: 622651669491263349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      jump_upgrade_SS_0: 2033467501735988070
+      jump_upgrade_SS_1: 4945444299267052981
+      jump_upgrade_SS_10: 4918895204788315719
+      jump_upgrade_SS_11: 6977086123269649453
+      jump_upgrade_SS_12: -1304658961600787420
+      jump_upgrade_SS_13: 2469535221901644776
+      jump_upgrade_SS_14: 4625899864911141922
+      jump_upgrade_SS_15: 622651669491263349
+      jump_upgrade_SS_2: -5176453075954441114
+      jump_upgrade_SS_3: 7346929741063331586
+      jump_upgrade_SS_4: 2768893685590220169
+      jump_upgrade_SS_5: 2539304660313093769
+      jump_upgrade_SS_6: 1400469868383953980
+      jump_upgrade_SS_7: 2256086373411662365
+      jump_upgrade_SS_8: 5075013764908981879
+      jump_upgrade_SS_9: -3656724202784378817
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

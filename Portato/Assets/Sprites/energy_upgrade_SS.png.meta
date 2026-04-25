@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: 815bd23052d01df46b77c0a67f35d89a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4609945825356246704
+    second: energy_upgrade_SS_0
+  - first:
+      213: 9214380312892275729
+    second: energy_upgrade_SS_1
+  - first:
+      213: 6006748098940430389
+    second: energy_upgrade_SS_2
+  - first:
+      213: 6423798320834803485
+    second: energy_upgrade_SS_3
+  - first:
+      213: -7844076766123289989
+    second: energy_upgrade_SS_4
+  - first:
+      213: 6382560691061883618
+    second: energy_upgrade_SS_5
+  - first:
+      213: 6754615117580061261
+    second: energy_upgrade_SS_6
+  - first:
+      213: 4916518044497402667
+    second: energy_upgrade_SS_7
+  - first:
+      213: -5349609727286581844
+    second: energy_upgrade_SS_8
+  - first:
+      213: 4772902543398479284
+    second: energy_upgrade_SS_9
+  - first:
+      213: 2390614500312247883
+    second: energy_upgrade_SS_10
+  - first:
+      213: 6657732392208610595
+    second: energy_upgrade_SS_11
+  - first:
+      213: -5841740819700562580
+    second: energy_upgrade_SS_12
+  - first:
+      213: 8347579376301980966
+    second: energy_upgrade_SS_13
+  - first:
+      213: 2359580159733164719
+    second: energy_upgrade_SS_14
+  - first:
+      213: 4664475621440265177
+    second: energy_upgrade_SS_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: energy_upgrade_SS_0
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 449
+        width: 212
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0be672abd41d9ff30800000000000000
+      internalID: 4609945825356246704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: energy_upgrade_SS_1
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 449
+        width: 212
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11cfb4f131e00ef70800000000000000
+      internalID: 9214380312892275729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: energy_upgrade_SS_2
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 359
+        width: 92
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 538e89422914c5350800000000000000
+      internalID: 6006748098940430389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: energy_upgrade_SS_3
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 359
+        width: 92
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d17fb1eb98ae52950800000000000000
+      internalID: 6423798320834803485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: energy_upgrade_SS_4
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 359
+        width: 92
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b72935cadbd342390800000000000000
+      internalID: -7844076766123289989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: energy_upgrade_SS_5
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 359
+        width: 92
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e28d1cd129639850800000000000000
+      internalID: 6382560691061883618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: energy_upgrade_SS_6
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 359
+        width: 92
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4ac7d579a63dbd50800000000000000
+      internalID: 6754615117580061261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: energy_upgrade_SS_7
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 359
+        width: 92
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2bd016dc1bfa3440800000000000000
+      internalID: 4916518044497402667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: energy_upgrade_SS_8
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 129
+        width: 212
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca5eb16eb4e52c5b0800000000000000
+      internalID: -5349609727286581844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: energy_upgrade_SS_9
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 129
+        width: 212
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b523d64391cc3240800000000000000
+      internalID: 4772902543398479284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: energy_upgrade_SS_10
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 39
+        width: 92
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4e6206d83b2d2120800000000000000
+      internalID: 2390614500312247883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: energy_upgrade_SS_11
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 39
+        width: 92
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 325b4372654056c50800000000000000
+      internalID: 6657732392208610595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: energy_upgrade_SS_12
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 39
+        width: 92
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6549d3eca7fdeea0800000000000000
+      internalID: -5841740819700562580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: energy_upgrade_SS_13
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 39
+        width: 92
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62d3bd2273f88d370800000000000000
+      internalID: 8347579376301980966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: energy_upgrade_SS_14
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 39
+        width: 92
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faa64f757a9eeb020800000000000000
+      internalID: 2359580159733164719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: energy_upgrade_SS_15
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 39
+        width: 92
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9db9a6f3ddb8bb040800000000000000
+      internalID: 4664475621440265177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      energy_upgrade_SS_0: 4609945825356246704
+      energy_upgrade_SS_1: 9214380312892275729
+      energy_upgrade_SS_10: 2390614500312247883
+      energy_upgrade_SS_11: 6657732392208610595
+      energy_upgrade_SS_12: -5841740819700562580
+      energy_upgrade_SS_13: 8347579376301980966
+      energy_upgrade_SS_14: 2359580159733164719
+      energy_upgrade_SS_15: 4664475621440265177
+      energy_upgrade_SS_2: 6006748098940430389
+      energy_upgrade_SS_3: 6423798320834803485
+      energy_upgrade_SS_4: -7844076766123289989
+      energy_upgrade_SS_5: 6382560691061883618
+      energy_upgrade_SS_6: 6754615117580061261
+      energy_upgrade_SS_7: 4916518044497402667
+      energy_upgrade_SS_8: -5349609727286581844
+      energy_upgrade_SS_9: 4772902543398479284
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

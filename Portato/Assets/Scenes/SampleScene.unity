@@ -305,6 +305,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerStats: {fileID: 21085659}
   _rb: {fileID: 21085655}
+  _maxDistanceToClick: 25
+  _maxForce: 10
+  _lineRenderer: {fileID: 0}
+  _circleSegments: 64
+  _lineWidth: 0.05
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -411,7 +416,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
