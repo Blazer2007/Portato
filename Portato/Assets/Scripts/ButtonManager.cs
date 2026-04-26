@@ -10,6 +10,7 @@ public class ButtonManager : MonoBehaviour
     public void OnClickPlayButton()
     {
         mainMenu.enabled = false;
+        SceneManager.LoadScene("SampleScene");
     }
     public void OnClickQuitButton()
     {
