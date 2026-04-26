@@ -1,13 +1,15 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 
 public class ButtonManager : MonoBehaviour
 {
-    
+    [SerializeField] private Canvas mainMenu;
+
     public void OnClickPlayButton()
     {
-        SceneManager.LoadScene("SampleScene");
+        mainMenu.enabled = false;
     }
     public void OnClickQuitButton()
     {
