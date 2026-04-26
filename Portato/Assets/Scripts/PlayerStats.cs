@@ -4,9 +4,9 @@ using System;
 [Serializable]
 public class PlayerStats : MonoBehaviour
 {
-    [SerializeField] private ScriptableFloat Energy;
-    [SerializeField] private ScriptableFloat MaxEnergy;
-    [SerializeField] private ScriptableFloat Gravity;
-    [SerializeField] private ScriptableFloat Range;
-    [SerializeField] private ScriptableFloat SlowFall;
+    [SerializeField] public ScriptableFloat Energy;
+    [SerializeField] public ScriptableFloat MaxEnergy;
+    [SerializeField] public ScriptableFloat Gravity;
+    [SerializeField] public ScriptableFloat Range;
+    [SerializeField] public ScriptableFloat SlowFall;
 }
