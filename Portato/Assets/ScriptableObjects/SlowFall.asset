@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47c553e2f1d7edd4a9418d4fb7a5a9ec, type: 3}
   m_Name: SlowFall
   m_EditorClassIdentifier: 
-  _value: 15
-  _initialValue: 15
+  _value: 0
+  _initialValue: 0

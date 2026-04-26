@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5edb87d2f906b064399a965da9cf32ad, type: 3}
+  m_Name: RechargeRule
+  m_EditorClassIdentifier: 
+  possiblePrefabs:
+  - prefab: {fileID: 6453628763011274720, guid: 5a34b64e3bd8bc74e887c1a248e2439e, type: 3}
+    weight: 0
+  - prefab: {fileID: 4723736054946465789, guid: 8d785d1cbd7b1e2419dc3ec78729048f, type: 3}
+    weight: 0
+  cannotFollowTypes: 00000000
+  mustBeNearTypes: 
+  maxPerChunk: 1
+  minPerChunk: 0
+  spawnChance: 0.7
