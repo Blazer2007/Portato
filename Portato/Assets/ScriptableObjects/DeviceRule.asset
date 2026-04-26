@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5edb87d2f906b064399a965da9cf32ad, type: 3}
+  m_Name: DeviceRule
+  m_EditorClassIdentifier: 
+  possiblePrefabs:
+  - prefab: {fileID: 2374490949342836203, guid: c1978f4458d131349b6c0b08b992604f, type: 3}
+    weight: 0
+  - prefab: {fileID: 784737357880694818, guid: abe03e928882d22439cfee8747f0fb7e, type: 3}
+    weight: 0
+  - prefab: {fileID: 7697727359545909809, guid: 648d01f251c758b4eb4c2bc7680c70b1, type: 3}
+    weight: 0
+  - prefab: {fileID: 4723736054946465789, guid: 8d785d1cbd7b1e2419dc3ec78729048f, type: 3}
+    weight: 0
+  cannotFollowTypes: 
+  mustBeNearTypes: 
+  maxPerChunk: 2
+  minPerChunk: 0
+  spawnChance: 0.7
