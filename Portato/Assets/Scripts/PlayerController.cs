@@ -9,6 +9,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField][Range(0f, 25f)] private float _maxDistanceToClick = 25f;
     [SerializeField] private float _maxForce = 10f;
 
+    [SerializeField][Tooltip("Cap the player's velocity at the chosen value")][Range(1f, 100f)] 
+    private float _maxVelocity = 50f;
+
     // Limite para impedir o jogador de voltar muito para trás
     private float _leftBoundX = 0f;
     private bool stopped = false;
@@ -85,7 +88,11 @@ public class PlayerController : MonoBehaviour
         _playerTransform.rotation = Quaternion.Euler(0, 0, angle); // sprite
         _rb.rotation = 0f; // física sempre direita
 
+        _rb.linearVelocity = new Vector2(_rb.linearVelocity.x,0); // reset velocidade vertical
         _rb.AddForce(direction * force, ForceMode2D.Impulse);
+
+        if (_rb.linearVelocity.magnitude > _maxVelocity)
+            _rb.linearVelocity = _rb.linearVelocity.normalized * _maxVelocity;
 
         if (_playerTransform.position.x > _leftBoundX)
             _leftBoundX = _playerTransform.position.x - 15f;

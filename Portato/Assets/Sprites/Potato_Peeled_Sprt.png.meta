@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 53a81e5b9d4be1647b06dd09536c10c6
+guid: 3b670c028979df24f8c4aa9cf9f403fa
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7478959642318228835
-    second: Potato_peeler_Sprt_0
+      213: -8702384315387868517
+    second: Potato_Peeled_Sprt_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,12 +100,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Potato_peeler_Sprt_0
+      name: Potato_Peeled_Sprt_0
       rect:
         serializedVersion: 2
-        x: 94
-        y: 24
-        width: 132
+        x: 79
+        y: 9
+        width: 172
         height: 272
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d92b32e94d5653890800000000000000
-      internalID: -7478959642318228835
+      spriteID: b9a0066829bea3780800000000000000
+      internalID: -8702384315387868517
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Potato_peeler_Sprt_0: -7478959642318228835
+      Potato_Peeled_Sprt_0: -8702384315387868517
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

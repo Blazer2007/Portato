@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 1405603631451679359}
   - component: {fileID: 321633095890770960}
   - component: {fileID: -8403418196343616431}
+  - component: {fileID: 7098608021810236070}
   m_Layer: 0
   m_Name: Phone
-  m_TagString: Untagged
+  m_TagString: Spawned
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -103,3 +104,18 @@ MonoBehaviour:
   type: 4
   value: 20
   rate: 15
+--- !u!114 &7098608021810236070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2374490949342836203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b4bb8920320dc548bf8bbe4cc3ff607, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  possiblePrefabs:
+  - {fileID: 2374490949342836203}
+  localPosition: {x: 0, y: 0, z: 0}
