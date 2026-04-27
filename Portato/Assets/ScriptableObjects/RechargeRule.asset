@@ -14,11 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   possiblePrefabs:
   - prefab: {fileID: 6453628763011274720, guid: 5a34b64e3bd8bc74e887c1a248e2439e, type: 3}
-    weight: 0
-  - prefab: {fileID: 4723736054946465789, guid: 8d785d1cbd7b1e2419dc3ec78729048f, type: 3}
-    weight: 0
+    weight: 1
   cannotFollowTypes: 00000000
   mustBeNearTypes: 
   maxPerChunk: 1
   minPerChunk: 0
-  spawnChance: 0.7
+  spawnChance: 1

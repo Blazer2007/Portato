@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   possiblePrefabs:
   - prefab: {fileID: 7410755483181646021, guid: 92728800546c4f340b6f00cd9e46fc9c, type: 3}
-    weight: 0
+    weight: 0.3
   - prefab: {fileID: 1998866227896571185, guid: f12639495491ad440af9d36c90f8ddf4, type: 3}
-    weight: 0
+    weight: 0.2
   - prefab: {fileID: 5662446234595260620, guid: 48f568b1538375840b93eb3ef0e2f716, type: 3}
-    weight: 0
+    weight: 0.5
   - prefab: {fileID: 4723736054946465789, guid: 8d785d1cbd7b1e2419dc3ec78729048f, type: 3}
-    weight: 0
+    weight: 0.05
   cannotFollowTypes: 
   mustBeNearTypes: 
   maxPerChunk: 2
   minPerChunk: 0
-  spawnChance: 0.7
+  spawnChance: 1
