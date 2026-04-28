@@ -6,9 +6,11 @@ using System.Collections.Generic;
 public class ButtonManager : MonoBehaviour
 {
     [SerializeField] private Canvas mainMenu;
+    public static bool Play;
 
     public void OnClickPlayButton()
     {
+        Play = true;
         mainMenu.enabled = false;
         SceneManager.LoadScene("SampleScene");
     }

@@ -1,5 +1,6 @@
 ﻿using Unity.Cinemachine;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform _playerTransform;
     [SerializeField][Range(0f, 25f)] private float _maxDistanceToClick = 25f;
     [SerializeField] private float _maxForce = 10f;
+    [SerializeField] private ParticleSystem _particleSystem;
 
     [SerializeField][Tooltip("Cap the player's velocity at the chosen value")][Range(1f, 100f)] 
     private float _maxVelocity = 50f;
@@ -22,6 +24,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        _particleSystem = GameObject.Find("Shock_VFX").GetComponent<ParticleSystem>();
         _rb = GetComponent<Rigidbody2D>();
         _rb.interpolation = RigidbodyInterpolation2D.Interpolate; // reduz tremor quando física move o player
         _leftBoundX = transform.position.x; // ponto de início
@@ -30,7 +33,7 @@ public class PlayerController : MonoBehaviour
         {
             // cria um anchor que terá Y fixo (a mesma Y da câmera inicial)
             _cameraAnchor = new GameObject("CameraAnchor").transform;
-            _cameraAnchor.position = new Vector3(_playerTransform.position.x, _cinemachineCamera.transform.position.y, _cinemachineCamera.transform.position.z);
+            _cameraAnchor.position = new Vector3(_playerTransform.position.x, 0, _cinemachineCamera.transform.position.z);
             _cinemachineCamera.Follow = _cameraAnchor;
         }
     }
@@ -38,7 +41,11 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         if (stopped) return;
-        if (Input.GetMouseButtonDown(0)) ApplyForce();
+        if (Input.GetMouseButtonDown(0)) 
+        { 
+            ClickParticlesAt(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+            ApplyForce();
+        }
 
         if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.LeftShift))
             TryDash();
@@ -74,7 +81,7 @@ public class PlayerController : MonoBehaviour
         Vector2 clickPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         float distance = Vector2.Distance(clickPos, _playerTransform.position);
 
-        if (clickPos.x >= _playerTransform.position.x) return;
+        if (clickPos.x >= _playerTransform.position.x +1) return;
         if (distance > _maxDistanceToClick) return;
 
         float t = Mathf.Clamp01(1f - (distance / _maxDistanceToClick));
@@ -111,7 +118,12 @@ public class PlayerController : MonoBehaviour
                 _rb.linearVelocity = new Vector2(0, _rb.linearVelocity.y);
         }
     }
-
+    void ClickParticlesAt(Vector2 position) 
+    {
+        _particleSystem.transform.position = position;
+        _particleSystem.Stop(true,ParticleSystemStopBehavior.StopEmittingAndClear);
+        _particleSystem.Play();
+    }
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("Station"))

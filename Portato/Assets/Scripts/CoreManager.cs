@@ -8,10 +8,11 @@ public class CoreManager : MonoBehaviour
     public static CoreManager Instance;
 
     [Header("Referências")]
-    [SerializeField] Rigidbody2D potato;
+    [SerializeField] Rigidbody2D _playerRB;
     [SerializeField] ChunkSpawner spawner;
     [SerializeField] Slider energyBar;
     [SerializeField] GameObject gameOverPanel;
+    [SerializeField] PlayerController _playerController;
 
     [Header("Upgrades")]
     public float consumoMult = 1f;
@@ -37,16 +38,16 @@ public class CoreManager : MonoBehaviour
 
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.R)) GameEvents.RechargeEnergy(100f);
         if (floatDuration > 0 && Input.GetKeyDown(KeyCode.Space) && floatTimer <= 0)
         {
             floatTimer = floatDuration;
-            potato.gravityScale = 0f;
+            _playerRB.gravityScale = 0f;
         }
         if (floatTimer > 0)
         {
             floatTimer -= Time.deltaTime;
-            if (floatTimer <= 0) potato.gravityScale = 1f;
+            if (floatTimer <= 0) _playerRB.gravityScale = 1f;
         }
     }
 
@@ -54,7 +55,7 @@ public class CoreManager : MonoBehaviour
 
     public void TriggerDeath()
     {
-        Time.timeScale = 0f;
+        _playerController.enabled = false;
         gameOverPanel.SetActive(true);
     }
 
