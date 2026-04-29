@@ -1,19 +1,13 @@
 fileFormatVersion: 2
-guid: 6bb3892811cc77148bec75534eadc80a
+guid: 9d55c88dfd828074395595bde9667215
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9002548416417698767
-    second: float_upgrade_SS_0
+      213: -6894419036062264860
+    second: Shop_b_SS_0
   - first:
-      213: 6161622688864426295
-    second: float_upgrade_SS_1
-  - first:
-      213: -8456650480756318890
-    second: float_upgrade_SS_2
-  - first:
-      213: -1211837241388116900
-    second: float_upgrade_SS_3
+      213: 2794028767517975491
+    second: Shop_b_SS_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +40,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -105,106 +99,49 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: float_upgrade_SS_0
+      name: Shop_b_SS_0
       rect:
         serializedVersion: 2
-        x: 17
-        y: 360
-        width: 295
-        height: 271
+        x: 14
+        y: 384
+        width: 292
+        height: 182
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fc315d1561a7fec70800000000000000
-      internalID: 9002548416417698767
+      spriteID: 4e151d63a6a1250a0800000000000000
+      internalID: -6894419036062264860
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: float_upgrade_SS_1
+      name: Shop_b_SS_1
       rect:
         serializedVersion: 2
-        x: 119
-        y: 359
-        width: 92
-        height: 82
+        x: 14
+        y: 64
+        width: 292
+        height: 182
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 73950c9903b728550800000000000000
-      internalID: 6161622688864426295
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: float_upgrade_SS_2
-      rect:
-        serializedVersion: 2
-        x: 18
-        y: 41
-        width: 295
-        height: 271
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 65d12e86131f3aa80800000000000000
-      internalID: -8456650480756318890
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: float_upgrade_SS_3
-      rect:
-        serializedVersion: 2
-        x: 119
-        y: 39
-        width: 92
-        height: 82
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c54d8751370be2fe0800000000000000
-      internalID: -1211837241388116900
+      spriteID: 3c3a1245c5266c620800000000000000
+      internalID: 2794028767517975491
       vertices: []
       indices: 
       edges: []
@@ -213,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 64066e528de992b4c93edd20a2428eea
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -223,10 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      float_upgrade_SS_0: 9002548416417698767
-      float_upgrade_SS_1: 6161622688864426295
-      float_upgrade_SS_2: -8456650480756318890
-      float_upgrade_SS_3: -1211837241388116900
+      Shop_b_SS_0: -6894419036062264860
+      Shop_b_SS_1: 2794028767517975491
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

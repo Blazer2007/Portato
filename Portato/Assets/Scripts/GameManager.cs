@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -6,7 +7,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject OptionsMenu;
     [SerializeField] private GameObject OptionsMenuPause;
     [SerializeField] private GameObject PauseMenu;
-    
+    [SerializeField] private GameObject GameOverMenu;
+    [SerializeField] private ScriptableFloat PlayerEnergy;
     public bool isgamestarted;
 
     void Awake()
@@ -17,6 +19,7 @@ public class GameManager : MonoBehaviour
         OptionsMenu.SetActive(false);
         OptionsMenuPause.SetActive(false);
         PauseMenu.SetActive(false);
+        GameOverMenu.SetActive(false);
     }
 
     public void PLay()
@@ -99,6 +102,42 @@ public class GameManager : MonoBehaviour
         OptionsMenu.SetActive(false);
         OptionsMenuPause.SetActive(false);
     }
+
+    private void OnEnable()
+    {
+        PlayerEnergy.OnValueChanged += GameOver;
+    }
+
+    private void OnDisable()
+    {
+        PlayerEnergy.OnValueChanged -= GameOver;
+    }
+
+    public void GameOver(float energy)
+    {
+        if (energy <= 0f)
+        {
+            Time.timeScale = 0f;
+            isgamestarted = false;
+
+            GameOverMenu.SetActive(true);
+            mainMenu.SetActive(false);
+            OptionsMenu.SetActive(false);
+            PauseMenu.SetActive(false);
+            OptionsMenuPause.SetActive(false);
+        }
+    }
+
+    public void Shop()
+    {
+        SceneManager.LoadScene("Shop");
+    }
+
+    public void BackFromShop()
+    {
+        SceneManager.LoadScene("MainScene");
+    }
+
 
     
     void Update()
