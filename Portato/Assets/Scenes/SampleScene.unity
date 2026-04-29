@@ -2024,11 +2024,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _chunkPrefabs:
-  - {fileID: 4761074152170362547, guid: 901b73cd51da3e54f831b332246692d2, type: 3}
-  - {fileID: 4761074152170362547, guid: 3479f36f0cdef7347ab1c72eb673db34, type: 3}
   - {fileID: 4761074152170362547, guid: 38d62b09a801cbc40bcca5c7d583d095, type: 3}
+  - {fileID: 4761074152170362547, guid: 3479f36f0cdef7347ab1c72eb673db34, type: 3}
+  - {fileID: 4761074152170362547, guid: 901b73cd51da3e54f831b332246692d2, type: 3}
   _player: {fileID: 21085658}
-  _chunkWidth: 21.6
+  _chunkWidth: 70
   _totalChunks: 5
 --- !u!4 &365405109
 Transform:

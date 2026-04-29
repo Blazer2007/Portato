@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ChunkSpawner : MonoBehaviour
@@ -61,7 +62,7 @@ public class ChunkSpawner : MonoBehaviour
                 Random.Range(0, spawnable.possiblePrefabs.Length)];
 
             var obj = Instantiate(prefab,
-                                  chunk.transform.TransformPoint(spawnable.localPosition),
+                                  spawnable.transform.position,
                                   Quaternion.identity,
                                   chunk.transform);
             obj.tag = "Spawned";
