@@ -64,9 +64,7 @@ public class CoreManager : MonoBehaviour
         switch (index)
         {
             case 0: consumoMult = Mathf.Max(0.5f, consumoMult - 0.25f); break;
-            case 1:
-                CoreManager.Instance.dashCooldown =
-                        Mathf.Max(1f, dashCooldown - 1.5f); break; // reduz cooldown
+            case 1: dashCooldown = dashCooldown - 1.5f; break; // reduz cooldown
             case 2: floatDuration += 2f; break;
         }
     }

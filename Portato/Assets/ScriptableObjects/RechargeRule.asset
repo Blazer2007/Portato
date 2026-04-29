@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RechargeRule
   m_EditorClassIdentifier: 
   possiblePrefabs:
-  - prefab: {fileID: 6453628763011274720, guid: 5a34b64e3bd8bc74e887c1a248e2439e, type: 3}
+  - prefab: {fileID: 8777840925189223977, guid: 5a34b64e3bd8bc74e887c1a248e2439e, type: 3}
     weight: 1
   cannotFollowTypes: 00000000
   mustBeNearTypes: 

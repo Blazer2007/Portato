@@ -26,6 +26,10 @@ public class Interactable : MonoBehaviour
                 DeviceTracker.Charge(gameObject.GetInstanceID());
                 col.GetComponent<PlayerController>()?.GetComponent<Station>()?.StartInteraction(col.GetComponent<PlayerController>());
                 break;
+
+            case InteractableType.ClumpRemover:
+                var dir = ((Vector2)transform.position - potatoRb.position).normalized;
+                potatoRb.AddForce(dir * value); break;
         }
     }
 
@@ -45,10 +49,6 @@ public class Interactable : MonoBehaviour
 
             case InteractableType.Peeler:
                 GameEvents.DrainEnergy(rate * Time.fixedDeltaTime); break;
-
-            case InteractableType.ClumpRemover:
-                var dir = ((Vector2)transform.position - potatoRb.position).normalized;
-                potatoRb.AddForce(dir * value); break;
         }
     }
 }

@@ -17,7 +17,7 @@ MonoBehaviour:
     weight: 0.5
   - prefab: {fileID: 784737357880694818, guid: abe03e928882d22439cfee8747f0fb7e, type: 3}
     weight: 0.3
-  - prefab: {fileID: 7697727359545909809, guid: 648d01f251c758b4eb4c2bc7680c70b1, type: 3}
+  - prefab: {fileID: 2160564639683018463, guid: 648d01f251c758b4eb4c2bc7680c70b1, type: 3}
     weight: 0.2
   cannotFollowTypes: 
   mustBeNearTypes: 

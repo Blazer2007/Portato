@@ -1,15 +1,23 @@
-﻿using Unity.Cinemachine;
+﻿using System.Collections.Generic;
+using Unity.Cinemachine;
+using Unity.VisualScripting;
 using UnityEngine;
-using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private CinemachineCamera _cinemachineCamera;
     [SerializeField] private Rigidbody2D _rb;
     [SerializeField] private Transform _playerTransform;
+    [SerializeField] private Transform _playerHead;
     [SerializeField][Range(0f, 25f)] private float _maxDistanceToClick = 25f;
     [SerializeField] private float _maxForce = 10f;
-    [SerializeField] private ParticleSystem _particleSystem;
+    
+    [SerializeField][Tooltip("Reference to the player's input particles")]
+    private ParticleSystem _InputParticles;
+
+    [Header("Steam Effect")]
+    [SerializeField][Tooltip("Reference to the player's steam particles")]
+    private ParticleSystem _steamParticles;
 
     [SerializeField][Tooltip("Cap the player's velocity at the chosen value")][Range(1f, 100f)] 
     private float _maxVelocity = 50f;
@@ -24,7 +32,12 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        _particleSystem = GameObject.Find("Shock_VFX").GetComponent<ParticleSystem>();
+        if(_InputParticles != null)
+        _InputParticles = GameObject.Find("Shock_VFX").GetComponent<ParticleSystem>();
+        if(_steamParticles != null)
+        _steamParticles = GameObject.Find("Steam_VFX").GetComponent<ParticleSystem>();
+
+        _playerHead = GameObject.Find("Head").transform;
         _rb = GetComponent<Rigidbody2D>();
         _rb.interpolation = RigidbodyInterpolation2D.Interpolate; // reduz tremor quando física move o player
         _leftBoundX = transform.position.x; // ponto de início
@@ -40,9 +53,11 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        float t = Time.deltaTime;
+        _steamParticles.transform.position = _playerHead.position; 
         if (stopped) return;
         if (Input.GetMouseButtonDown(0)) 
-        { 
+        {
             ClickParticlesAt(Camera.main.ScreenToWorldPoint(Input.mousePosition));
             ApplyForce();
         }
@@ -124,9 +139,9 @@ public class PlayerController : MonoBehaviour
     }
     void ClickParticlesAt(Vector2 position) 
     {
-        _particleSystem.transform.position = position;
-        _particleSystem.Stop(true,ParticleSystemStopBehavior.StopEmittingAndClear);
-        _particleSystem.Play();
+        _InputParticles.transform.position = position;
+        _InputParticles.Stop(true,ParticleSystemStopBehavior.StopEmittingAndClear);
+        _InputParticles.Play();
     }
     void OnTriggerEnter2D(Collider2D col)
     {

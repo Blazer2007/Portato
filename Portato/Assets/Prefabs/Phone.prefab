@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1405603631451679359}
   - component: {fileID: 321633095890770960}
-  - component: {fileID: -8403418196343616431}
   - component: {fileID: 7098608021810236070}
   - component: {fileID: 5805915731302321556}
   m_Layer: 0
@@ -91,21 +90,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-8403418196343616431
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2374490949342836203}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8dde591bb93649345ae95f41299f378e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 4
-  value: 20
-  rate: 15
 --- !u!114 &7098608021810236070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,7 +104,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   possiblePrefabs:
   - {fileID: 2374490949342836203}
-  localPosition: {x: 0, y: 0, z: 0}
 --- !u!61 &5805915731302321556
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -178,6 +161,7 @@ GameObject:
   - component: {fileID: 2873245637198984463}
   - component: {fileID: 5789231854234151727}
   - component: {fileID: 8867887223638892124}
+  - component: {fileID: 7645913210340674375}
   m_Layer: 0
   m_Name: Station
   m_TagString: Station
@@ -230,11 +214,11 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.006276002, y: 0.33415365}
+  m_Offset: {x: 0.005, y: 0.32}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -244,7 +228,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.11115846, y: 0.13109028}
+  m_Size: {x: 0.15, y: 0.18}
   m_EdgeRadius: 0
 --- !u!114 &8867887223638892124
 MonoBehaviour:
@@ -259,3 +243,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionTime: 2
+--- !u!114 &7645913210340674375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3785657493741007236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dde591bb93649345ae95f41299f378e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 4
+  value: 20
+  rate: 15

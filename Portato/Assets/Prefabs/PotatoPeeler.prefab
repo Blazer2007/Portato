@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5553185000796582405}
   - component: {fileID: 1026081485978344657}
+  - component: {fileID: 1830145004605679581}
   m_Layer: 0
   m_Name: Blade
   m_TagString: Untagged
@@ -62,7 +63,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -78,6 +79,21 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.4276656, y: 0.17633772}
   m_EdgeRadius: 0
+--- !u!114 &1830145004605679581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6432198880701790251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dde591bb93649345ae95f41299f378e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
+  value: 20
+  rate: 15
 --- !u!1 &7410755483181646021
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,7 +104,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1380257773168079594}
   - component: {fileID: 1733227479202911961}
-  - component: {fileID: -2619335248136121615}
   - component: {fileID: 5803404758557896088}
   m_Layer: 0
   m_Name: PotatoPeeler
@@ -168,21 +183,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-2619335248136121615
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7410755483181646021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8dde591bb93649345ae95f41299f378e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 1
-  value: 20
-  rate: 15
 --- !u!114 &5803404758557896088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,4 +197,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   possiblePrefabs:
   - {fileID: 7410755483181646021}
-  localPosition: {x: 0, y: 0, z: 0}
