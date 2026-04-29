@@ -12,6 +12,7 @@ public static class DeviceTracker
         charged.Add(id);
         if (charged.Count >= total)
             GameEvents.DevicesCharged();
+        GameEvents.DrainEnergy(20f);
     }
     public static void Reset() { charged.Clear(); total = 0; }
 }

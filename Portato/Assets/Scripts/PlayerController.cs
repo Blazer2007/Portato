@@ -123,7 +123,7 @@ public class PlayerController : MonoBehaviour
         if (_playerTransform.position.x > _leftBoundX)
             _leftBoundX = _playerTransform.position.x - 15f;
 
-        GameEvents.DrainEnergy(10f * CoreManager.Instance.consumoMult);
+        GameEvents.DrainEnergy(10f * t * CoreManager.Instance.consumoMult);
     }
 
     void EnforceLeftBound()

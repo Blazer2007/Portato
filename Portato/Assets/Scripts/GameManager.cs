@@ -105,18 +105,16 @@ public class GameManager : MonoBehaviour
 
     private void OnEnable()
     {
-        PlayerEnergy.OnValueChanged += GameOver;
+        
     }
 
     private void OnDisable()
     {
-        PlayerEnergy.OnValueChanged -= GameOver;
+        
     }
 
-    public void GameOver(float energy)
+    public void GameOver()
     {
-        if (energy <= 0f)
-        {
             Time.timeScale = 0f;
             isgamestarted = false;
 
@@ -125,7 +123,6 @@ public class GameManager : MonoBehaviour
             OptionsMenu.SetActive(false);
             PauseMenu.SetActive(false);
             OptionsMenuPause.SetActive(false);
-        }
     }
 
     public void Shop()
