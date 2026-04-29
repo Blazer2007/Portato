@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 321633095890770960}
   - component: {fileID: -8403418196343616431}
   - component: {fileID: 7098608021810236070}
+  - component: {fileID: 5805915731302321556}
   m_Layer: 0
   m_Name: Phone
   m_TagString: Spawned
@@ -120,6 +121,52 @@ MonoBehaviour:
   possiblePrefabs:
   - {fileID: 2374490949342836203}
   localPosition: {x: 0, y: 0, z: 0}
+--- !u!61 &5805915731302321556
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2374490949342836203}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: -0.065361395}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.38, y: 0.78}
+    newSize: {x: 1.52, y: 3.12}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.38, y: 0.6492772}
+  m_EdgeRadius: 0
 --- !u!1 &3785657493741007236
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,7 +234,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.0125, y: 0.65}
+  m_Offset: {x: 0.006276002, y: 0.33415365}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -197,7 +244,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.5, y: 0.5}
+  m_Size: {x: 0.11115846, y: 0.13109028}
   m_EdgeRadius: 0
 --- !u!114 &8867887223638892124
 MonoBehaviour:

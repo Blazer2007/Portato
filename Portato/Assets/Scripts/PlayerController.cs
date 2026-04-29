@@ -59,6 +59,10 @@ public class PlayerController : MonoBehaviour
             pos.x = _playerTransform.position.x;
             _cameraAnchor.position = pos;
         }
+        if (transform.position.y < -50f)
+        {
+            CoreManager.Instance.Restart();
+        }
     }
     void TryDash()
     {

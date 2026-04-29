@@ -23,8 +23,9 @@ public class Interactable : MonoBehaviour
                 GameEvents.DrainEnergy(value); break;
 
             case InteractableType.Device:
-                // regista este dispositivo como carregado
-                DeviceTracker.Charge(gameObject.GetInstanceID()); break;
+                DeviceTracker.Charge(gameObject.GetInstanceID());
+                col.GetComponent<PlayerController>()?.GetComponent<Station>()?.StartInteraction(col.GetComponent<PlayerController>());
+                break;
         }
     }
 
