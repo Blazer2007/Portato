@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     private bool stopped = false;
     float _dashTimer = 0f;
     private Transform _cameraAnchor;
+    [SerializeField] private GameObject _deathpanel;
 
     void Start()
     {
@@ -70,8 +71,8 @@ public class PlayerController : MonoBehaviour
             _cameraAnchor.position = pos;
         }
         if (transform.position.y < -50f)
-            GameManager.Instance.backtomainmenu();
-        
+            _deathpanel.SetActive(true);
+            
     }
 
     void TryDash()

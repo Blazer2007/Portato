@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2110771461948201205}
   - component: {fileID: 348679602247890784}
   - component: {fileID: 9201603929031851439}
+  - component: {fileID: 2656366290399241018}
   m_Layer: 0
   m_Name: MiniFridge
   m_TagString: Spawned
@@ -150,6 +151,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.5050427, y: 0.5675}
   m_EdgeRadius: 0
+--- !u!114 &2656366290399241018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784737357880694818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a7a7742c461bda4283c38b0aa449615, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stationSprite: {fileID: 2110771461948201205}
+  _station: {fileID: 1932302300004029416}
 --- !u!1 &7832171727004808567
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,9 +258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionTime: 2
-  _stationSprite: {fileID: 2110771461948201205}
   _activatedSprite: {fileID: -7237047421213158239, guid: 15f703a053d87874296dc41227e72727, type: 3}
-  _parent: {fileID: 784737357880694818}
 --- !u!114 &2429537981450792428
 MonoBehaviour:
   m_ObjectHideFlags: 0

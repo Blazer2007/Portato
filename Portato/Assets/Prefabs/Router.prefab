@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8030613612881317773}
   - component: {fileID: 3458042660860041692}
   - component: {fileID: 5570663998855185959}
+  - component: {fileID: 2526683426899202514}
   m_Layer: 0
   m_Name: Router
   m_TagString: Untagged
@@ -135,6 +136,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.8259982, y: 1.285}
   m_EdgeRadius: 0
+--- !u!114 &2526683426899202514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2160564639683018463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a7a7742c461bda4283c38b0aa449615, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stationSprite: {fileID: 3458042660860041692}
+  _station: {fileID: 3530292837270178305}
 --- !u!1 &4329805882979308834
 GameObject:
   m_ObjectHideFlags: 0
@@ -147,6 +162,7 @@ GameObject:
   - component: {fileID: 3530292837270178305}
   - component: {fileID: 8019842949693177185}
   - component: {fileID: 3326013517373806629}
+  - component: {fileID: 8312367677832455894}
   m_Layer: 0
   m_Name: Station
   m_TagString: Untagged
@@ -182,9 +198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionTime: 2
-  _stationSprite: {fileID: 3458042660860041692}
   _activatedSprite: {fileID: -1192303756752979252, guid: 5560e3943226d2248b91f461523c0320, type: 3}
-  _parent: {fileID: 2160564639683018463}
 --- !u!61 &8019842949693177185
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -246,3 +260,17 @@ MonoBehaviour:
   type: 4
   value: 20
   rate: 15
+--- !u!114 &8312367677832455894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4329805882979308834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 912fe4e53c471b7448e053cc6ac8d20e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionTime: 2
+  _activatedSprite: {fileID: -1192303756752979252, guid: 5560e3943226d2248b91f461523c0320, type: 3}

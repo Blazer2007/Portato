@@ -7,7 +7,7 @@ public class CoreManager : MonoBehaviour
 {
     public static CoreManager Instance;
 
-    [Header("Referências")]
+    [Header("Referï¿½ncias")]
     [SerializeField] Rigidbody2D _playerRB;
     [SerializeField] ChunkSpawner spawner;
     [SerializeField] Slider energyBar;
@@ -24,7 +24,7 @@ public class CoreManager : MonoBehaviour
     [Header("Upgrades")]
     public float consumoMult = 1f;
     [Range(1f, 5f)] public float dashCooldown = 5f;   // segundos entre dashes (diminui com upgrades)
-    public float dashForce = 15f;  // força do dash para trás
+    public float dashForce = 15f;  // forï¿½a do dash para trï¿½s
     public float floatDuration = 0f;
 
     float floatTimer = 0f;
@@ -63,6 +63,7 @@ public class CoreManager : MonoBehaviour
     {
         _playerController.enabled = false;
         gameOverPanel.SetActive(true);
+    
     }
 
     public void ApplyUpgrade(int upgradeIndex, int upgradeCount)

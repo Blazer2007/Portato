@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 321633095890770960}
   - component: {fileID: 7098608021810236070}
   - component: {fileID: 5805915731302321556}
+  - component: {fileID: 222773812707827536}
   m_Layer: 0
   m_Name: Phone
   m_TagString: Spawned
@@ -150,6 +151,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.38, y: 0.6492772}
   m_EdgeRadius: 0
+--- !u!114 &222773812707827536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2374490949342836203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a7a7742c461bda4283c38b0aa449615, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stationSprite: {fileID: 321633095890770960}
+  _station: {fileID: 8867887223638892124}
 --- !u!1 &3785657493741007236
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,9 +258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionTime: 2
-  _stationSprite: {fileID: 321633095890770960}
   _activatedSprite: {fileID: 5998798905765782004, guid: 05ad10a8c6e5a1d4b8f64abc66fda475, type: 3}
-  _parent: {fileID: 2374490949342836203}
 --- !u!114 &7645913210340674375
 MonoBehaviour:
   m_ObjectHideFlags: 0
