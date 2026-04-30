@@ -43,8 +43,26 @@ public class CoreManager : MonoBehaviour
         consumoMult = 1f;
         dashCooldown = 5f;
         floatDuration = 0f;
-    } 
 
+        foreach (var pu in _upgrades)
+        {
+            for (int i = 0; i < pu.UpgradesSelected; i++)
+            {
+                ApplyUpgradeEffect(pu.UpgradeIndex);
+            }
+            // Atualiza o sprite para o nível correto
+            UpdateUpgradeSprite(pu.UpgradeIndex, pu.UpgradesSelected);
+        }
+    }
+    void ApplyUpgradeEffect(int upgradeIndex)
+    {
+        switch (upgradeIndex)
+        {
+            case 0: consumoMult = Mathf.Max(0.5f, consumoMult - 0.25f); break;
+            case 1: dashCooldown = Mathf.Max(1f, dashCooldown - 1.5f); break;
+            case 2: floatDuration += 2f; break;
+        }
+    }
     void OnEnable()
     {
         GameEvents.OnEnergyChanged += UpdateEnergyUI;
@@ -89,6 +107,7 @@ public class CoreManager : MonoBehaviour
         // Verifica se já atingiu o máximo
         if (upgrade.UpgradesSelected >= upgrade.UpgradeCount) return;
 
+        if (upgradeIndex < 0 || upgradeIndex >= _upgrades.Length) return;
         // Aplica o efeito do upgrade
         switch (upgradeIndex)
         {
@@ -108,6 +127,8 @@ public class CoreManager : MonoBehaviour
 
         // Atualiza o sprite do botão correspondente
         UpdateUpgradeSprite(upgradeIndex, upgrade.UpgradesSelected);
+
+        ApplyUpgradeEffect(upgradeIndex);
     }
 
     void UpdateUpgradeSprite(int upgradeIndex, int level)

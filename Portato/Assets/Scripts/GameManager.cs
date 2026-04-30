@@ -26,9 +26,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private PlayerUpgrades[] _playerUpgrades;
     [SerializeField] private PlayerController _playerController;
     [SerializeField] private TextMeshProUGUI _creditsText;
-    [SerializeField] private TextMeshProUGUI _dashCooldownInfo;
-    [SerializeField] private TextMeshProUGUI _energyEconInfo;
-    [SerializeField] private TextMeshProUGUI _slowFallInfo;
     [SerializeField] private AudioSource _startmusic;
     [SerializeField] private AudioSource _playingmusic;
     
@@ -68,7 +65,7 @@ public class GameManager : MonoBehaviour
             GameOverMenu.SetActive(false);
         }
 
-        if (mainMenu.activeSelf == true)
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("MainScene") && mainMenu.activeSelf == true)
         {
             _startmusic.Play();
         }
@@ -80,7 +77,7 @@ public class GameManager : MonoBehaviour
     private int _cheatIndex = 0;
     void Update()
     {
-        if (GameOverMenu.activeSelf == true)
+        if ((SceneManager.GetActiveScene() == SceneManager.GetSceneByName("MainScene") && GameOverMenu.activeSelf == true))
         {
             _playingmusic.Stop();
         }
@@ -117,26 +114,24 @@ public class GameManager : MonoBehaviour
         if (_creditsText != null)
             _creditsText.text = _playerUpgrades[0].playerCredits.ToString();
 
-        Debug.Log("Cheatcode ativado � +10000 cr�ditos!");
+        Debug.Log("Cheatcode ativado � +10000 creditos!");
     }
 
     public void Start()
     {
-       
+
         Debug.Log("GameManager Start chamado, pontos: " + GameEvents.Points);
         _creditsText = GameObject.Find("PlayerCredits").GetComponent<TextMeshProUGUI>();
         Debug.Log("_creditsText encontrado: " + (_creditsText != null));
         PlayerPrefs.DeleteAll();
         UpdatePointsUI(GameEvents.Points);
-         
 
         _creditsText = GameObject.Find("PlayerCredits").GetComponent<TextMeshProUGUI>();
-        _dashCooldownInfo = GameObject.Find("DashUpgradeInfo").GetComponent<TextMeshProUGUI>();
-        _energyEconInfo = GameObject.Find("EnergyUpgradeInfo").GetComponent<TextMeshProUGUI>();
-        _slowFallInfo = GameObject.Find("SlowFallUpgradeInfo").GetComponent<TextMeshProUGUI>();
-        _actualRunPointsText = GameObject.Find("ActualRunPoints").GetComponent<TextMeshProUGUI>();
-        _maxPointsText = GameObject.Find("MaxPoints").GetComponent<TextMeshProUGUI>();
-
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("MainScene"))
+        { 
+            _actualRunPointsText = GameObject.Find("ActualRunPoints").GetComponent<TextMeshProUGUI>();
+            _maxPointsText = GameObject.Find("MaxPoints").GetComponent<TextMeshProUGUI>();
+        }
         
     }
     #region Main methods
@@ -283,29 +278,6 @@ public class GameManager : MonoBehaviour
 
         Debug.Log("A chamar CoreManager.Instance.ApplyUpgrade...");
         CoreManager.Instance.ApplyUpgrade(index);
-    }
-
-    void UpdateUpgradeInfoText(int index, PlayerUpgrades pu)
-    {
-        TextMeshProUGUI infoText = index switch
-        {
-            0 => _energyEconInfo,
-            1 => _dashCooldownInfo,
-            2 => _slowFallInfo,
-            _ => null
-        };
-
-        if (infoText == null) return;
-
-        if (pu.UpgradesSelected >= pu.UpgradeCount)
-            infoText.text = "MAX";
-        else
-        {
-            int nextCost = index == 2
-                ? pu.UpgradeCost
-                : pu.UpgradeCost * (int)Mathf.Pow(2, pu.UpgradesSelected);
-            infoText.text = $"N�vel {pu.UpgradesSelected}/{pu.UpgradeCount} � Pr�ximo: {nextCost}";
-        }
     }
     #endregion
     public void backtoshop(GameObject caller)
