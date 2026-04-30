@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f11130d7afbca0b4ca5f74aa104a40f6, type: 3}
-  m_Name: SlowFall
+  m_Name: EnergyEcon
   m_EditorClassIdentifier: 
-  UpgradeIndex: 2
-  UpgradeCount: 1
+  UpgradeIndex: 1
+  UpgradeCount: 3
   UpgradesSelected: 0
-  UpgradeCost: 25
-  UpgradeDescription: This upgrade allows you to briefly slow down you fall speed
-    by pressing SPACE
+  UpgradeCost: 5
+  UpgradeDescription: This upgrade makes it so that you spend less energy for each
+    click, turning your resilience up a notch

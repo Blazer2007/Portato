@@ -243,6 +243,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionTime: 2
+  _stationSprite: {fileID: 321633095890770960}
+  _activatedSprite: {fileID: 5998798905765782004, guid: 05ad10a8c6e5a1d4b8f64abc66fda475, type: 3}
+  _parent: {fileID: 2374490949342836203}
 --- !u!114 &7645913210340674375
 MonoBehaviour:
   m_ObjectHideFlags: 0

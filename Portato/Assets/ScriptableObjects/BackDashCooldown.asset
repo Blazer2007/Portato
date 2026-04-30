@@ -9,8 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47c553e2f1d7edd4a9418d4fb7a5a9ec, type: 3}
-  m_Name: Range
+  m_Script: {fileID: 11500000, guid: f11130d7afbca0b4ca5f74aa104a40f6, type: 3}
+  m_Name: BackDashCooldown
   m_EditorClassIdentifier: 
-  _value: 10
-  _initialValue: 10
+  UpgradeIndex: 0
+  UpgradeCount: 3
+  UpgradesSelected: 0
+  UpgradeCost: 5
+  UpgradeDescription: This upgrade reduces the time between each dash, allowing you
+    to dash more overtime

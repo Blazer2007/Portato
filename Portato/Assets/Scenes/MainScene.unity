@@ -399,7 +399,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerStats: {fileID: 21085659}
-  _gameManager: {fileID: 1364580520}
   _clickCost: 5
   _transferCost: 20
   maxEnergy: 100
@@ -6002,7 +6001,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 581962047524446590, guid: 2bbbbdac3b431ca499f0b72c3cb8a26f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 581962047524446590, guid: 2bbbbdac3b431ca499f0b72c3cb8a26f, type: 3}
       propertyPath: m_LocalRotation.w

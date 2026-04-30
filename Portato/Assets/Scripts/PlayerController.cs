@@ -34,9 +34,11 @@ public class PlayerController : MonoBehaviour
     {
         if(_InputParticles != null)
         _InputParticles = GameObject.Find("Shock_VFX").GetComponent<ParticleSystem>();
-        if(_steamParticles != null)
-        _steamParticles = GameObject.Find("Steam_VFX").GetComponent<ParticleSystem>();
-
+        if(_steamParticles != null) 
+        {
+            _steamParticles = GameObject.Find("Steam_VFX").GetComponent<ParticleSystem>();
+            _steamParticles.Play();
+        }
         _playerHead = GameObject.Find("Head").transform;
         _rb = GetComponent<Rigidbody2D>();
         _rb.interpolation = RigidbodyInterpolation2D.Interpolate; // reduz tremor quando física move o player
@@ -54,7 +56,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         float t = Time.deltaTime;
-        _steamParticles.transform.position = _playerHead.position; 
+        _steamParticles.transform.position = _playerHead.position;
         if (stopped) return;
         if (Input.GetMouseButtonDown(0)) 
         {

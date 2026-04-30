@@ -13,11 +13,11 @@ public class CoreManager : MonoBehaviour
     [SerializeField] Slider energyBar;
     [SerializeField] GameObject gameOverPanel;
     [SerializeField] PlayerController _playerController;
+    [SerializeField] PlayerUpgrades[] _upgrades;
 
     [Header("Upgrades")]
     public float consumoMult = 1f;
-
-    [SerializeField][Range(1f, 5f)] public float dashCooldown = 5f;   // segundos entre dashes (diminui com upgrades)
+    [Range(1f, 5f)] public float dashCooldown = 5f;   // segundos entre dashes (diminui com upgrades)
     public float dashForce = 15f;  // força do dash para trás
     public float floatDuration = 0f;
 
@@ -35,10 +35,10 @@ public class CoreManager : MonoBehaviour
         GameEvents.OnEnergyChanged -= UpdateEnergyUI;
         GameEvents.OnPlayerDied -= TriggerDeath;
     }
-
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.R)) GameEvents.RechargeEnergy(100f);
+
         if (floatDuration > 0 && Input.GetKeyDown(KeyCode.Space) && floatTimer <= 0)
         {
             floatTimer = floatDuration;
@@ -59,13 +59,18 @@ public class CoreManager : MonoBehaviour
         gameOverPanel.SetActive(true);
     }
 
-    public void ApplyUpgrade(int index)
+    public void ApplyUpgrade(int upgradeIndex, int upgradeCount)
     {
-        switch (index)
+        foreach (PlayerUpgrades upgrade in _upgrades) 
         {
-            case 0: consumoMult = Mathf.Max(0.5f, consumoMult - 0.25f); break;
-            case 1: dashCooldown = dashCooldown - 1.5f; break; // reduz cooldown
-            case 2: floatDuration += 2f; break;
+            upgradeIndex = upgrade.UpgradeIndex; 
+        }
+        switch (upgradeIndex)
+        {
+            case 0: consumoMult = Mathf.Max(0.5f, consumoMult - 0.25f * upgradeCount); break; // Reduz o consumo de energia
+                
+            case 1: dashCooldown = dashCooldown - 1.5f; break; // Reduz cooldown do dash
+            case 2: floatDuration += 2f; break; // Aplica um timer para diminuir a gravidade do jogador
         }
     }
 
