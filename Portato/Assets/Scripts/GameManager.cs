@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
@@ -7,6 +8,8 @@ public class Upgrade
 }
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance;
+
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject OptionsMenu;
     [SerializeField] private GameObject OptionsMenuPause;
@@ -27,6 +30,7 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
+        Instance = this;
         Time.timeScale = 0f;
         isgamestarted = false;
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("MainScene")) 
@@ -65,7 +69,6 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         isgamestarted = true;
-
         mainMenu.SetActive(false);
         OptionsMenu.SetActive(false);
         PauseMenu.SetActive(false);
@@ -75,7 +78,6 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0f;
         isgamestarted = false;
-
         PauseMenu.SetActive(true);
         mainMenu.SetActive(false);
         OptionsMenu.SetActive(false);
@@ -85,7 +87,6 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0f;
         isgamestarted = false;
-
         OptionsMenu.SetActive(true);
         mainMenu.SetActive(false);
         PauseMenu.SetActive(false);
@@ -95,7 +96,6 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0f;
         isgamestarted = false;
-
         OptionsMenuPause.SetActive(true);
         mainMenu.SetActive(false);
         PauseMenu.SetActive(false);
@@ -111,19 +111,16 @@ public class GameManager : MonoBehaviour
     }
     public void backtomainmenu()
     {
+        GameEvents.Reset();
+        DeviceTracker.Reset();
         Time.timeScale = 0f;
         isgamestarted = false;
-
-        mainMenu.SetActive(true);
-        OptionsMenu.SetActive(false);
-        PauseMenu.SetActive(false);
-        OptionsMenuPause.SetActive(false);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     public void backtogame()
     {
         Time.timeScale = 1f;
         isgamestarted = true;
-
         mainMenu.SetActive(false);
         OptionsMenu.SetActive(false);
         PauseMenu.SetActive(false);
@@ -133,7 +130,6 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0f;
         isgamestarted = false;
-
         PauseMenu.SetActive(true);
         mainMenu.SetActive(false);
         OptionsMenu.SetActive(false);
@@ -182,6 +178,14 @@ public class GameManager : MonoBehaviour
     public void backtoshop(GameObject caller) 
     {
         caller.SetActive(false);
+    private IEnumerator GameOverDelay()
+    {
+        yield return new WaitForSecondsRealtime(3f);
+        GameEvents.Reset();
+        DeviceTracker.Reset();
+        Time.timeScale = 0f;
+        isgamestarted = false;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     public void Shop()
     {
@@ -206,4 +210,15 @@ public class GameManager : MonoBehaviour
         _SlowFallPanel.SetActive(true);
     }
     #endregion
+}
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isgamestarted == true)
+                Pause();
+            else if (isgamestarted == false && PauseMenu.activeSelf == true)
+                backtogame();
+        }
+    }
 }
