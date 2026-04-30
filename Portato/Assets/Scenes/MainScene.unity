@@ -386,6 +386,7 @@ MonoBehaviour:
   _InputParticles: {fileID: 55662009}
   _steamParticles: {fileID: 1953398856}
   _maxVelocity: 50
+  _deathpanel: {fileID: 497027848}
 --- !u!114 &21085661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1500,7 +1501,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -245}
+  m_AnchoredPosition: {x: 0, y: -192}
   m_SizeDelta: {x: 160, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &242294980
@@ -1969,7 +1970,7 @@ Animation:
   m_Animation: {fileID: 7400000, guid: f4f926392f7b87a4da3c48715089018f, type: 2}
   m_Animations: []
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_UpdateMode: 0
   m_CullingType: 0
@@ -2634,8 +2635,15 @@ MonoBehaviour:
   _playerRB: {fileID: 21085655}
   spawner: {fileID: 365405108}
   energyBar: {fileID: 1978810187}
-  gameOverPanel: {fileID: 86806039}
+  gameOverPanel: {fileID: 497027848}
   _playerController: {fileID: 21085660}
+  _upgrades: []
+  _energyButton: {fileID: 0}
+  _dashButton: {fileID: 0}
+  _slowFallButton: {fileID: 0}
+  _energyImage: []
+  _dashImage: []
+  _slowFallImage: []
   consumoMult: 1
   dashCooldown: 3.8
   dashForce: 15
@@ -2667,7 +2675,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 552674a6c32551d4596d231953e1d01e, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -2765,7 +2773,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioSource: {fileID: 541118962}
-  _microwaveSound: {fileID: 8300000, guid: 552674a6c32551d4596d231953e1d01e, type: 3}
+  _microwaveSound: {fileID: 8300000, guid: 92ae197e9ee04bb49902b23571a34d17, type: 3}
   _playerController: {fileID: 21085660}
   _playerRigidbody: {fileID: 21085655}
   launchForce: 30
@@ -3224,7 +3232,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 37.5}
+  m_AnchoredPosition: {x: 0, y: 58}
   m_SizeDelta: {x: 160, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &891425946
@@ -3274,6 +3282,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1364580520}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: PLay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 541118963}
+        m_TargetAssemblyTypeName: Microwave_Launch, Assembly-CSharp
+        m_MethodName: StartMicrowaveAnimation
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4120,7 +4140,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -55}
+  m_AnchoredPosition: {x: 0, y: -26}
   m_SizeDelta: {x: 160, y: 85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1264679452
@@ -4394,6 +4414,16 @@ MonoBehaviour:
   PauseMenu: {fileID: 2142393171}
   GameOverMenu: {fileID: 497027848}
   PlayerEnergy: {fileID: 11400000, guid: df10c6fd0d7531344b0139bda0e0cd56, type: 2}
+  _coreManager: {fileID: 0}
+  _dashCoolDownPanel: {fileID: 0}
+  _EnergyEconPanel: {fileID: 0}
+  _SlowFallPanel: {fileID: 0}
+  _playerUpgrades: []
+  _playerController: {fileID: 0}
+  _creditsText: {fileID: 0}
+  _dashCooldownInfo: {fileID: 0}
+  _energyEconInfo: {fileID: 0}
+  _slowFallInfo: {fileID: 0}
   isgamestarted: 0
 --- !u!4 &1364580521
 Transform:
@@ -5467,7 +5497,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -150}
+  m_AnchoredPosition: {x: 0, y: -110}
   m_SizeDelta: {x: 160, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1893491989
