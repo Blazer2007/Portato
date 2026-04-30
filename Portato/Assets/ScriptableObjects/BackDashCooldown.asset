@@ -12,9 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f11130d7afbca0b4ca5f74aa104a40f6, type: 3}
   m_Name: BackDashCooldown
   m_EditorClassIdentifier: 
-  UpgradeIndex: 0
   UpgradeCount: 3
   UpgradesSelected: 0
   UpgradeCost: 5
+  UpgradeSpriteRenderer: {fileID: 0}
+  UpgradeSprites:
+  - {fileID: 2033467501735988070, guid: 3b066bcfc8896e443bf47ab70f32f773, type: 3}
+  - {fileID: 4945444299267052981, guid: 3b066bcfc8896e443bf47ab70f32f773, type: 3}
+  - {fileID: 5075013764908981879, guid: 3b066bcfc8896e443bf47ab70f32f773, type: 3}
+  - {fileID: -3656724202784378817, guid: 3b066bcfc8896e443bf47ab70f32f773, type: 3}
+  playerCredits: 0
+  UpgradeIndex: 0
   UpgradeDescription: This upgrade reduces the time between each dash, allowing you
     to dash more overtime

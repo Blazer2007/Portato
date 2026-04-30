@@ -12,9 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f11130d7afbca0b4ca5f74aa104a40f6, type: 3}
   m_Name: SlowFall
   m_EditorClassIdentifier: 
-  UpgradeIndex: 2
   UpgradeCount: 1
   UpgradesSelected: 0
   UpgradeCost: 25
+  UpgradeSpriteRenderer: {fileID: 0}
+  UpgradeSprites:
+  - {fileID: 9002548416417698767, guid: 6bb3892811cc77148bec75534eadc80a, type: 3}
+  - {fileID: -8456650480756318890, guid: 6bb3892811cc77148bec75534eadc80a, type: 3}
+  playerCredits: 0
+  UpgradeIndex: 2
   UpgradeDescription: This upgrade allows you to briefly slow down you fall speed
     by pressing SPACE

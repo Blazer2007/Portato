@@ -12,9 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f11130d7afbca0b4ca5f74aa104a40f6, type: 3}
   m_Name: EnergyEcon
   m_EditorClassIdentifier: 
-  UpgradeIndex: 1
   UpgradeCount: 3
   UpgradesSelected: 0
   UpgradeCost: 5
+  UpgradeSpriteRenderer: {fileID: 0}
+  UpgradeSprites:
+  - {fileID: 4609945825356246704, guid: 815bd23052d01df46b77c0a67f35d89a, type: 3}
+  - {fileID: 9214380312892275729, guid: 815bd23052d01df46b77c0a67f35d89a, type: 3}
+  - {fileID: -5349609727286581844, guid: 815bd23052d01df46b77c0a67f35d89a, type: 3}
+  - {fileID: 4772902543398479284, guid: 815bd23052d01df46b77c0a67f35d89a, type: 3}
+  playerCredits: 0
+  UpgradeIndex: 1
   UpgradeDescription: This upgrade makes it so that you spend less energy for each
     click, turning your resilience up a notch

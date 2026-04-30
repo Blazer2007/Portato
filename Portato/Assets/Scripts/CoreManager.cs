@@ -14,6 +14,12 @@ public class CoreManager : MonoBehaviour
     [SerializeField] GameObject gameOverPanel;
     [SerializeField] PlayerController _playerController;
     [SerializeField] PlayerUpgrades[] _upgrades;
+    [SerializeField] Button _energyButton;
+    [SerializeField] Button _dashButton;
+    [SerializeField] Button _slowFallButton;
+    [SerializeField] Image[] _energyImage;
+    [SerializeField] Image[] _dashImage;
+    [SerializeField] Image[] _slowFallImage;
 
     [Header("Upgrades")]
     public float consumoMult = 1f;
@@ -67,10 +73,16 @@ public class CoreManager : MonoBehaviour
         }
         switch (upgradeIndex)
         {
-            case 0: consumoMult = Mathf.Max(0.5f, consumoMult - 0.25f * upgradeCount); break; // Reduz o consumo de energia
+            case 0: consumoMult = Mathf.Max(0.5f, consumoMult - 0.25f * upgradeCount); 
+                _energyButton.targetGraphic = _energyImage[upgradeCount];
+                break; // Reduz o consumo de energia
                 
-            case 1: dashCooldown = dashCooldown - 1.5f; break; // Reduz cooldown do dash
-            case 2: floatDuration += 2f; break; // Aplica um timer para diminuir a gravidade do jogador
+            case 1: dashCooldown = dashCooldown - 1.5f; 
+                _dashButton.targetGraphic = _dashImage[upgradeCount];
+                break; // Reduz cooldown do dash
+            case 2: floatDuration += 2f;
+                _slowFallButton.targetGraphic = _slowFallImage[upgradeCount];
+                break; // Aplica um timer para diminuir a gravidade do jogador
         }
     }
 

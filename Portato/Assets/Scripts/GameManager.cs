@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
+using TMPro;
 public class Upgrade 
 {
     public int index, upgradeCount, upgradesSelected, price, playerCredits;
@@ -22,6 +23,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _SlowFallPanel;
     [SerializeField] private PlayerUpgrades[] _playerUpgrades;
     [SerializeField] private PlayerController _playerController;
+    [SerializeField] private TextMeshProUGUI _creditsText;
+    [SerializeField] private TextMeshProUGUI _dashCooldownInfo;
+    [SerializeField] private TextMeshProUGUI _energyEconInfo;
+    [SerializeField] private TextMeshProUGUI _slowFallInfo;
 
     //private PlayerUpgrades _slowFallUpgrade;
     //private PlayerUpgrades _dashCooldownUpgrade;
@@ -58,12 +63,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    //public void Start()
-    //{
-    //    _energyEconUpgrade = _playerUpgrades[0];
-    //    _dashCooldownUpgrade = _playerUpgrades[1];
-    //    _slowFallUpgrade = _playerUpgrades[2];
-    //}
+    public void Start()
+    {
+        _creditsText = GameObject.Find("PlayerCredits").GetComponent<TextMeshProUGUI>();
+        _dashCooldownInfo = GameObject.Find("DashUpgradeInfo").GetComponent<TextMeshProUGUI>();
+        _energyEconInfo = GameObject.Find("EnergyUpgradeInfo").GetComponent<TextMeshProUGUI>();
+        _slowFallInfo = GameObject.Find("SlowFallUpgradeInfo").GetComponent<TextMeshProUGUI>();
+    }
     #region Main methods
     public void PLay()
     {
@@ -148,6 +154,42 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
+    #region Upgrades
+    public void BuyEnergyEcon()
+    {
+        BuyUpgrade(new Upgrade
+        {
+            index = 0,
+            upgradeCount = 3,
+            upgradesSelected = _playerUpgrades[0].UpgradesSelected,
+            price = _playerUpgrades[0].UpgradeCost,
+            playerCredits = _playerUpgrades[0].playerCredits
+        });
+    }
+
+    public void BuyDashCooldown()
+    {
+        BuyUpgrade(new Upgrade
+        {
+            index = 1,
+            upgradeCount = 3,
+            upgradesSelected = _playerUpgrades[1].UpgradesSelected,
+            price = _playerUpgrades[1].UpgradeCost,
+            playerCredits = _playerUpgrades[1].playerCredits
+        });
+    }
+
+    public void BuySlowFall()
+    {
+        BuyUpgrade(new Upgrade
+        {
+            index = 2,
+            upgradeCount = 1,
+            upgradesSelected = _playerUpgrades[2].UpgradesSelected,
+            price = _playerUpgrades[2].UpgradeCost,
+            playerCredits = _playerUpgrades[2].playerCredits
+        });
+    }
     public void BuyUpgrade(Upgrade upgrade)
     {
         if (upgrade.upgradesSelected == upgrade.upgradeCount) return;
@@ -175,9 +217,11 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-    public void backtoshop(GameObject caller) 
+    #endregion
+    public void backtoshop(GameObject caller)
     {
         caller.SetActive(false);
+    }
     private IEnumerator GameOverDelay()
     {
         yield return new WaitForSecondsRealtime(3f);
@@ -200,6 +244,7 @@ public class GameManager : MonoBehaviour
     public void OpenEnergyEconPanel()
     {
         _EnergyEconPanel.SetActive(true);
+
     }
     public void OpenDashCooldownPanel()
     {
@@ -210,15 +255,4 @@ public class GameManager : MonoBehaviour
         _SlowFallPanel.SetActive(true);
     }
     #endregion
-}
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (isgamestarted == true)
-                Pause();
-            else if (isgamestarted == false && PauseMenu.activeSelf == true)
-                backtogame();
-        }
-    }
 }
