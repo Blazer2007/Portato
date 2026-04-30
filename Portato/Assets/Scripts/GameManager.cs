@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _dashCooldownInfo;
     [SerializeField] private TextMeshProUGUI _energyEconInfo;
     [SerializeField] private TextMeshProUGUI _slowFallInfo;
+    [SerializeField] private AudioSource _startmusic;
+    [SerializeField] private AudioSource _playingmusic;
     
     //private PlayerUpgrades _slowFallUpgrade;
     //private PlayerUpgrades _dashCooldownUpgrade;
@@ -45,12 +47,24 @@ public class GameManager : MonoBehaviour
             OptionsMenu.SetActive(false);
             OptionsMenuPause.SetActive(false);
             PauseMenu.SetActive(false);
-            GameOverMenu.SetActive(false); 
+            GameOverMenu.SetActive(false);
+              
         }
+        if (mainMenu.activeSelf == true)
+        {
+            _startmusic.Play();
+        }
+
         
+         
     }
     void Update()
     {
+        if (GameOverMenu.activeSelf == true)
+        {
+            _playingmusic.Stop();
+        }
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isgamestarted == true)
@@ -73,6 +87,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("_creditsText encontrado: " + (_creditsText != null));
         PlayerPrefs.DeleteAll();
         UpdatePointsUI(GameEvents.Points);
+         
 
         _creditsText = GameObject.Find("PlayerCredits").GetComponent<TextMeshProUGUI>();
         _dashCooldownInfo = GameObject.Find("DashUpgradeInfo").GetComponent<TextMeshProUGUI>();
@@ -92,6 +107,8 @@ public class GameManager : MonoBehaviour
         OptionsMenu.SetActive(false);
         PauseMenu.SetActive(false);
         OptionsMenuPause.SetActive(false);
+        _startmusic.Stop();
+        _playingmusic.Play();
     }
     public void Pause()
     {
@@ -101,6 +118,7 @@ public class GameManager : MonoBehaviour
         mainMenu.SetActive(false);
         OptionsMenu.SetActive(false);
         OptionsMenuPause.SetActive(false);
+         _playingmusic.Stop();
     }
     public void Options()
     {
@@ -135,6 +153,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
         isgamestarted = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+         _playingmusic.Stop();
     }
     public void backtogame()
     {
@@ -144,6 +163,7 @@ public class GameManager : MonoBehaviour
         OptionsMenu.SetActive(false);
         PauseMenu.SetActive(false);
         OptionsMenuPause.SetActive(false);
+        _playingmusic.Play();
     }
     public void backtopause()
     {
@@ -240,12 +260,13 @@ public class GameManager : MonoBehaviour
     }
     private IEnumerator GameOverDelay()
     {
+       
+        _playingmusic.Stop();
         yield return new WaitForSecondsRealtime(3f);
         GameEvents.Reset();
         DeviceTracker.Reset();
         Time.timeScale = 0f;
         isgamestarted = false;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     public void Shop()
     {

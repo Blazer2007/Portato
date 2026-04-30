@@ -11,7 +11,7 @@ public class Microwave_Launch : MonoBehaviour
     [SerializeField] private AudioClip _microwaveSound;
     [SerializeField] private PlayerController _playerController;
     [SerializeField] private Rigidbody2D _playerRigidbody;
-    [SerializeField] private float interactionTime = 2f;
+
 
     [SerializeField] private float launchForce = 30f;
     [SerializeField] private float launchAngle = 45f;
