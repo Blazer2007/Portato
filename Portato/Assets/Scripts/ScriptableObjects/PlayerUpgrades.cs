@@ -11,4 +11,5 @@ public class PlayerUpgrades : ScriptableObject
     [HideInInspector]public int playerCredits;    
     public int UpgradeIndex;
     public string UpgradeDescription;
+    public int startingCredits;
 }

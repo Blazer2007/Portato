@@ -47,22 +47,62 @@ public class GameManager : MonoBehaviour
             PauseMenu.SetActive(false);
             GameOverMenu.SetActive(false); 
         }
-        
+        // Reset de todos os upgrades ao iniciar
+        foreach (var pu in _playerUpgrades)
+        {
+            pu.UpgradesSelected = 0;
+            pu.playerCredits = pu.startingCredits; // valor base definido no ScriptableObject
+        }
+
+        if (_creditsText != null)
+            _creditsText.text = _playerUpgrades[0].playerCredits.ToString();
+
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("MainScene"))
+        {
+            OptionsMenu.SetActive(false);
+            OptionsMenuPause.SetActive(false);
+            PauseMenu.SetActive(false);
+            GameOverMenu.SetActive(false);
+        }
+
     }
+    private KeyCode[] _cheatCode = { KeyCode.B, KeyCode.A, KeyCode.T, KeyCode.A, KeyCode.T, KeyCode.A };
+    private int _cheatIndex = 0;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (isgamestarted == true)
-            {
-                Pause();
-            }
-            else if (isgamestarted == false && PauseMenu.activeSelf == true)
-            {
-                backtogame();
-            }
-
+            if (isgamestarted) Pause();
+            else if (!isgamestarted && PauseMenu.activeSelf) backtogame();
         }
+
+        // Cheatcode
+        if (Input.anyKeyDown)
+        {
+            if (Input.GetKeyDown(_cheatCode[_cheatIndex]))
+            {
+                _cheatIndex++;
+                if (_cheatIndex >= _cheatCode.Length)
+                {
+                    ActivateCheat();
+                    _cheatIndex = 0;
+                }
+            }
+            else
+            {
+                _cheatIndex = 0; // reset se errar uma tecla
+            }
+        }
+    }
+    void ActivateCheat()
+    {
+        foreach (var pu in _playerUpgrades)
+            pu.playerCredits += 10000;
+
+        if (_creditsText != null)
+            _creditsText.text = _playerUpgrades[0].playerCredits.ToString();
+
+        Debug.Log("Cheatcode ativado — +10000 créditos!");
     }
 
     public void Start()
@@ -166,43 +206,6 @@ public class GameManager : MonoBehaviour
         OptionsMenuPause.SetActive(false);
     }
     #endregion
-
-    #region Upgrades
-    public void BuyEnergyEcon()
-    {
-        BuyUpgrade(new Upgrade
-        {
-            index = 0,
-            upgradeCount = 3,
-            upgradesSelected = _playerUpgrades[0].UpgradesSelected,
-            price = _playerUpgrades[0].UpgradeCost,
-            playerCredits = _playerUpgrades[0].playerCredits
-        });
-    }
-
-    public void BuyDashCooldown()
-    {
-        BuyUpgrade(new Upgrade
-        {
-            index = 1,
-            upgradeCount = 3,
-            upgradesSelected = _playerUpgrades[1].UpgradesSelected,
-            price = _playerUpgrades[1].UpgradeCost,
-            playerCredits = _playerUpgrades[1].playerCredits
-        });
-    }
-
-    public void BuySlowFall()
-    {
-        BuyUpgrade(new Upgrade
-        {
-            index = 2,
-            upgradeCount = 1,
-            upgradesSelected = _playerUpgrades[2].UpgradesSelected,
-            price = _playerUpgrades[2].UpgradeCost,
-            playerCredits = _playerUpgrades[2].playerCredits
-        });
-    }
     private void OnEnable()
     {
         GameEvents.OnPlayerDied += HandlePlayerDied;
@@ -221,17 +224,67 @@ public class GameManager : MonoBehaviour
         if (_maxPointsText != null)
             _maxPointsText.text = $"Record: {PlayerPrefs.GetInt("MaxPoints", 0)}";
     }
-    public void BuyUpgrade(Upgrade upgrade)
+    #region Upgrades
+
+    public void BuyUpgradeByIndex(int index)
     {
-        if (upgrade.upgradesSelected >= upgrade.upgradeCount) return;
+        Debug.Log($"BuyUpgradeByIndex chamado com index: {index}");
 
-        int[] multipliers = { 1, 2, 4 };
-        int cost = upgrade.price * multipliers[upgrade.upgradesSelected];
+        if (index < 0 || index >= _playerUpgrades.Length)
+        {
+            Debug.Log($"FALHA: index inválido. _playerUpgrades.Length = {_playerUpgrades.Length}");
+            return;
+        }
 
-        if (GameEvents.Points < cost) return;
+        var pu = _playerUpgrades[index];
+        Debug.Log($"Upgrade: {pu.name} | Selecionados: {pu.UpgradesSelected} | Máximo: {pu.UpgradeCount}");
 
-        GameEvents.SpendPoints(cost);
-        CoreManager.Instance.ApplyUpgrade(upgrade.index, upgrade.upgradesSelected);
+        if (pu.UpgradesSelected >= pu.UpgradeCount)
+        {
+            Debug.Log("FALHA: upgrade já no máximo");
+            return;
+        }
+
+        int cost = index == 2
+            ? pu.UpgradeCost
+            : pu.UpgradeCost * (int)Mathf.Pow(2, pu.UpgradesSelected);
+
+        Debug.Log($"Custo: {cost} | Créditos: {pu.playerCredits}");
+
+        if (pu.playerCredits < cost)
+        {
+            Debug.Log("FALHA: créditos insuficientes");
+            return;
+        }
+
+        pu.playerCredits -= cost;
+        if (_creditsText != null) _creditsText.text = pu.playerCredits.ToString();
+
+        Debug.Log("A chamar CoreManager.Instance.ApplyUpgrade...");
+        CoreManager.Instance.ApplyUpgrade(index);
+    }
+
+    void UpdateUpgradeInfoText(int index, PlayerUpgrades pu)
+    {
+        TextMeshProUGUI infoText = index switch
+        {
+            0 => _energyEconInfo,
+            1 => _dashCooldownInfo,
+            2 => _slowFallInfo,
+            _ => null
+        };
+
+        if (infoText == null) return;
+
+        if (pu.UpgradesSelected >= pu.UpgradeCount)
+            infoText.text = "MAX";
+        else
+        {
+            int nextCost = index == 2
+                ? pu.UpgradeCost
+                : pu.UpgradeCost * (int)Mathf.Pow(2, pu.UpgradesSelected);
+            infoText.text = $"Nível {pu.UpgradesSelected}/{pu.UpgradeCount} — Próximo: {nextCost}";
+        }
     }
     #endregion
     public void backtoshop(GameObject caller)

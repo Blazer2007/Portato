@@ -372,6 +372,23 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 58259bd5632c31343969d2216bfa0ea3, type: 2}
   - {fileID: 11400000, guid: 937e314a600000e469b16c36eefe8afc, type: 2}
   - {fileID: 11400000, guid: 9f91d43a010b7b046a0c043d05b8da4d, type: 2}
+  _energyImage: {fileID: 1812515471}
+  _dashImage: {fileID: 1323155368}
+  _slowFallImage: {fileID: 1347505300}
+  _energySprites:
+  - {fileID: 4609945825356246704, guid: 815bd23052d01df46b77c0a67f35d89a, type: 3}
+  - {fileID: 9214380312892275729, guid: 815bd23052d01df46b77c0a67f35d89a, type: 3}
+  - {fileID: -5349609727286581844, guid: 815bd23052d01df46b77c0a67f35d89a, type: 3}
+  - {fileID: 4772902543398479284, guid: 815bd23052d01df46b77c0a67f35d89a, type: 3}
+  _dashSprites:
+  - {fileID: 2033467501735988070, guid: 3b066bcfc8896e443bf47ab70f32f773, type: 3}
+  - {fileID: 4945444299267052981, guid: 3b066bcfc8896e443bf47ab70f32f773, type: 3}
+  - {fileID: 5075013764908981879, guid: 3b066bcfc8896e443bf47ab70f32f773, type: 3}
+  - {fileID: -3656724202784378817, guid: 3b066bcfc8896e443bf47ab70f32f773, type: 3}
+  _slowFallSprites:
+  - {fileID: 9002548416417698767, guid: 6bb3892811cc77148bec75534eadc80a, type: 3}
+  - {fileID: -8456650480756318890, guid: 6bb3892811cc77148bec75534eadc80a, type: 3}
+  _deathsound: {fileID: 0}
   consumoMult: 1
   dashCooldown: 5
   dashForce: 15
@@ -1927,18 +1944,30 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2063130399}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 2063130400}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: BuyUpgradeByIndex
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
+      - m_Target: {fileID: 2063130400}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: backtoshop
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 127360197}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1194952683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2329,6 +2358,28 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2943956330117035712, guid: 2e99f9f59c301374e88767764a79b04c, type: 3}
   m_PrefabInstance: {fileID: 6330405038328342965}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1323155368 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3878928082263907718, guid: 2e99f9f59c301374e88767764a79b04c, type: 3}
+  m_PrefabInstance: {fileID: 6330405038328342965}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1347505300 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6480703254348860852, guid: dfd63127c2f5d8f4b97d4acfb4a6ea5a, type: 3}
+  m_PrefabInstance: {fileID: 6878036291797995438}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1358239591
 GameObject:
   m_ObjectHideFlags: 0
@@ -2547,7 +2598,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1407665318}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2063130400}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: BuyUpgradeByIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2063130400}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: backtoshop
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 964967775}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1407665318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3182,6 +3257,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1812515471 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 666774206705332384, guid: 29fba93b28173354f8d5df3d4e5f401e, type: 3}
+  m_PrefabInstance: {fileID: 7872070837998568855}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812515464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1858252980
 GameObject:
   m_ObjectHideFlags: 0
@@ -3431,15 +3517,17 @@ MonoBehaviour:
   _dashCoolDownPanel: {fileID: 1435480470}
   _EnergyEconPanel: {fileID: 127360197}
   _SlowFallPanel: {fileID: 964967775}
+  _actualRunPointsText: {fileID: 0}
+  _maxPointsText: {fileID: 0}
   _playerUpgrades:
   - {fileID: 11400000, guid: 937e314a600000e469b16c36eefe8afc, type: 2}
   - {fileID: 11400000, guid: 58259bd5632c31343969d2216bfa0ea3, type: 2}
   - {fileID: 11400000, guid: 9f91d43a010b7b046a0c043d05b8da4d, type: 2}
   _playerController: {fileID: 0}
   _creditsText: {fileID: 0}
-  _dashCooldownInfo: {fileID: 0}
-  _energyEconInfo: {fileID: 0}
-  _slowFallInfo: {fileID: 0}
+  _dashCooldownInfo: {fileID: 1294423076}
+  _energyEconInfo: {fileID: 654707645}
+  _slowFallInfo: {fileID: 494473652}
   isgamestarted: 0
 --- !u!4 &2063130401
 Transform:
@@ -3539,13 +3627,25 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2063130399}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 2063130400}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: BuyUpgradeByIndex
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2063130400}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: backtoshop
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1435480470}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

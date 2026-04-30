@@ -7,19 +7,20 @@ public class CoreManager : MonoBehaviour
 {
     public static CoreManager Instance;
 
-    [Header("Refer�ncias")]
+    [Header("Referencias")]
     [SerializeField] Rigidbody2D _playerRB;
     [SerializeField] ChunkSpawner spawner;
     [SerializeField] Slider energyBar;
     [SerializeField] GameObject gameOverPanel;
     [SerializeField] PlayerController _playerController;
     [SerializeField] PlayerUpgrades[] _upgrades;
-    [SerializeField] Button _energyButton;
-    [SerializeField] Button _dashButton;
-    [SerializeField] Button _slowFallButton;
-    [SerializeField] Image[] _energyImage;
-    [SerializeField] Image[] _dashImage;
-    [SerializeField] Image[] _slowFallImage;
+    [SerializeField] Image _energyImage;
+    [SerializeField] Image _dashImage;
+    [SerializeField] Image _slowFallImage;
+    [SerializeField] Sprite[] _energySprites;
+    [SerializeField] Sprite[] _dashSprites;
+    [SerializeField] Sprite[] _slowFallSprites;
+    [SerializeField] private AudioSource _deathsound;
 
     [Header("Upgrades")]
     public float consumoMult = 1f;
@@ -29,7 +30,20 @@ public class CoreManager : MonoBehaviour
 
     float floatTimer = 0f;
 
-    void Awake() => Instance = this; 
+    void Awake() 
+    {
+        Instance = this;
+
+        // Reset dos sprites para o nível 0
+        if (_energySprites.Length > 0) _energyImage.sprite = _energySprites[0];
+        if (_dashSprites.Length > 0) _dashImage.sprite = _dashSprites[0];
+        if (_slowFallSprites.Length > 0) _slowFallImage.sprite = _slowFallSprites[0];
+
+        // Reset dos multiplicadores
+        consumoMult = 1f;
+        dashCooldown = 5f;
+        floatDuration = 0f;
+    } 
 
     void OnEnable()
     {
@@ -63,30 +77,58 @@ public class CoreManager : MonoBehaviour
     {
         _playerController.enabled = false;
         gameOverPanel.SetActive(true);
-    
+        _deathsound.Play();
     }
-
-    public void ApplyUpgrade(int upgradeIndex, int upgradeCount)
+    public void ApplyUpgrade(int upgradeIndex)
     {
-        foreach (PlayerUpgrades upgrade in _upgrades) 
-        {
-            upgradeIndex = upgrade.UpgradeIndex; 
-        }
+        // Garante que o index é válido
+        if (upgradeIndex < 0 || upgradeIndex >= _upgrades.Length) return;
+
+        var upgrade = _upgrades[upgradeIndex];
+
+        // Verifica se já atingiu o máximo
+        if (upgrade.UpgradesSelected >= upgrade.UpgradeCount) return;
+
+        // Aplica o efeito do upgrade
         switch (upgradeIndex)
         {
-            case 0: consumoMult = Mathf.Max(0.5f, consumoMult - 0.25f * upgradeCount); 
-                _energyButton.targetGraphic = _energyImage[upgradeCount];
-                break; // Reduz o consumo de energia
-                
-            case 1: dashCooldown = dashCooldown - 1.5f; 
-                _dashButton.targetGraphic = _dashImage[upgradeCount];
-                break; // Reduz cooldown do dash
-            case 2: floatDuration += 2f;
-                _slowFallButton.targetGraphic = _slowFallImage[upgradeCount];
-                break; // Aplica um timer para diminuir a gravidade do jogador
+            case 0:
+                consumoMult = Mathf.Max(0.5f, consumoMult - 0.25f);
+                break;
+            case 1:
+                dashCooldown = Mathf.Max(1f, dashCooldown - 1.5f);
+                break;
+            case 2:
+                floatDuration += 2f;
+                break;
         }
+
+        // Incrementa o nível do upgrade
+        upgrade.UpgradesSelected++;
+
+        // Atualiza o sprite do botão correspondente
+        UpdateUpgradeSprite(upgradeIndex, upgrade.UpgradesSelected);
     }
 
+    void UpdateUpgradeSprite(int upgradeIndex, int level)
+    {
+        (Image image, Sprite[] sprites) = upgradeIndex switch
+        {
+            0 => (_energyImage, _energySprites),
+            1 => (_dashImage, _dashSprites),
+            2 => (_slowFallImage, _slowFallSprites),
+            _ => (null, null)
+        };
+
+        Debug.Log($"Upgrade {upgradeIndex} | Nível {level} | Image: {image} | Sprites: {sprites?.Length}");
+
+        if (image == null || sprites == null) return;
+        if (level < 0 || level >= sprites.Length) return;
+
+        image.sprite = sprites[level];
+
+        Debug.Log($"Sprite alterado para: {sprites[level]?.name}");
+    }
     public void Restart()
     {
         GameEvents.Reset();
