@@ -9,12 +9,18 @@ public static class DeviceTracker
     public static void Register(int id) => total++;
     public static void Charge(int id)
     {
+        if (charged.Contains(id)) return; 
         charged.Add(id);
-        if (charged.Count >= total)
+        GameEvents.AddPoints(10);
+        int record = PlayerPrefs.GetInt("MaxDevices", 0);
+        if (charged.Count > record)
         {
-            GameEvents.DevicesCharged();
-            GameEvents.DrainEnergy(20f);
+            PlayerPrefs.SetInt("MaxDevices", charged.Count);
+            PlayerPrefs.Save();
         }
+        if (charged.Count >= total)
+            GameEvents.DevicesCharged();
+        GameEvents.DrainEnergy(20f);
     }
     public static void Reset() { charged.Clear(); total = 0; }
 }

@@ -21,13 +21,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _dashCoolDownPanel;
     [SerializeField] private GameObject _EnergyEconPanel;
     [SerializeField] private GameObject _SlowFallPanel;
+    [SerializeField] private TextMeshProUGUI _actualRunPointsText;
+    [SerializeField] private TextMeshProUGUI _maxPointsText;
     [SerializeField] private PlayerUpgrades[] _playerUpgrades;
     [SerializeField] private PlayerController _playerController;
     [SerializeField] private TextMeshProUGUI _creditsText;
     [SerializeField] private TextMeshProUGUI _dashCooldownInfo;
     [SerializeField] private TextMeshProUGUI _energyEconInfo;
     [SerializeField] private TextMeshProUGUI _slowFallInfo;
-
+    
     //private PlayerUpgrades _slowFallUpgrade;
     //private PlayerUpgrades _dashCooldownUpgrade;
     //private PlayerUpgrades _energyEconUpgrade;
@@ -65,10 +67,21 @@ public class GameManager : MonoBehaviour
 
     public void Start()
     {
+       
+        Debug.Log("GameManager Start chamado, pontos: " + GameEvents.Points);
+        _creditsText = GameObject.Find("PlayerCredits").GetComponent<TextMeshProUGUI>();
+        Debug.Log("_creditsText encontrado: " + (_creditsText != null));
+        PlayerPrefs.DeleteAll();
+        UpdatePointsUI(GameEvents.Points);
+
         _creditsText = GameObject.Find("PlayerCredits").GetComponent<TextMeshProUGUI>();
         _dashCooldownInfo = GameObject.Find("DashUpgradeInfo").GetComponent<TextMeshProUGUI>();
         _energyEconInfo = GameObject.Find("EnergyUpgradeInfo").GetComponent<TextMeshProUGUI>();
         _slowFallInfo = GameObject.Find("SlowFallUpgradeInfo").GetComponent<TextMeshProUGUI>();
+        _actualRunPointsText = GameObject.Find("ActualRunPoints").GetComponent<TextMeshProUGUI>();
+        _maxPointsText = GameObject.Find("MaxPoints").GetComponent<TextMeshProUGUI>();
+
+        
     }
     #region Main methods
     public void PLay()
@@ -190,32 +203,35 @@ public class GameManager : MonoBehaviour
             playerCredits = _playerUpgrades[2].playerCredits
         });
     }
+    private void OnEnable()
+    {
+        GameEvents.OnPlayerDied += HandlePlayerDied;
+        GameEvents.OnPointsChanged += UpdatePointsUI;
+    }
+    private void OnDisable()
+    {
+        GameEvents.OnPlayerDied -= HandlePlayerDied;
+        GameEvents.OnPointsChanged -= UpdatePointsUI;
+    }
+    private void HandlePlayerDied() => StartCoroutine(GameOverDelay());
+    void UpdatePointsUI(int points)
+    {
+        if (_actualRunPointsText != null)
+            _actualRunPointsText.text = $"Actual Run: {points}";
+        if (_maxPointsText != null)
+            _maxPointsText.text = $"Record: {PlayerPrefs.GetInt("MaxPoints", 0)}";
+    }
     public void BuyUpgrade(Upgrade upgrade)
     {
-        if (upgrade.upgradesSelected == upgrade.upgradeCount) return;
+        if (upgrade.upgradesSelected >= upgrade.upgradeCount) return;
 
-        if (upgrade.upgradesSelected < upgrade.upgradeCount)
-        {
-            if (upgrade.index == 2 && upgrade.playerCredits >= upgrade.price)
-            {
-                upgrade.playerCredits -= upgrade.price;
-            }
-            else
-            {
-                switch (upgrade.upgradesSelected)
-                {
-                    case 0:
-                        upgrade.playerCredits -= upgrade.price;
-                        break;
-                    case 1:
-                        upgrade.playerCredits -= upgrade.price * 2;
-                        break;
-                    case 2:
-                        upgrade.playerCredits -= upgrade.price * 4;
-                        break;
-                }
-            }
-        }
+        int[] multipliers = { 1, 2, 4 };
+        int cost = upgrade.price * multipliers[upgrade.upgradesSelected];
+
+        if (GameEvents.Points < cost) return;
+
+        GameEvents.SpendPoints(cost);
+        CoreManager.Instance.ApplyUpgrade(upgrade.index, upgrade.upgradesSelected);
     }
     #endregion
     public void backtoshop(GameObject caller)
