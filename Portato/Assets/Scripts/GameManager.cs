@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _dashCooldownInfo;
     [SerializeField] private TextMeshProUGUI _energyEconInfo;
     [SerializeField] private TextMeshProUGUI _slowFallInfo;
+    [SerializeField] private AudioSource _startmusic;
+    [SerializeField] private AudioSource _playingmusic;
     
     //private PlayerUpgrades _slowFallUpgrade;
     //private PlayerUpgrades _dashCooldownUpgrade;
@@ -45,7 +47,8 @@ public class GameManager : MonoBehaviour
             OptionsMenu.SetActive(false);
             OptionsMenuPause.SetActive(false);
             PauseMenu.SetActive(false);
-            GameOverMenu.SetActive(false); 
+            GameOverMenu.SetActive(false);
+              
         }
         // Reset de todos os upgrades ao iniciar
         foreach (var pu in _playerUpgrades)
@@ -65,11 +68,23 @@ public class GameManager : MonoBehaviour
             GameOverMenu.SetActive(false);
         }
 
+        if (mainMenu.activeSelf == true)
+        {
+            _startmusic.Play();
+        }
+
+        
+         
     }
     private KeyCode[] _cheatCode = { KeyCode.B, KeyCode.A, KeyCode.T, KeyCode.A, KeyCode.T, KeyCode.A };
     private int _cheatIndex = 0;
     void Update()
     {
+        if (GameOverMenu.activeSelf == true)
+        {
+            _playingmusic.Stop();
+        }
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isgamestarted) Pause();
@@ -102,7 +117,7 @@ public class GameManager : MonoBehaviour
         if (_creditsText != null)
             _creditsText.text = _playerUpgrades[0].playerCredits.ToString();
 
-        Debug.Log("Cheatcode ativado — +10000 créditos!");
+        Debug.Log("Cheatcode ativado ï¿½ +10000 crï¿½ditos!");
     }
 
     public void Start()
@@ -113,6 +128,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("_creditsText encontrado: " + (_creditsText != null));
         PlayerPrefs.DeleteAll();
         UpdatePointsUI(GameEvents.Points);
+         
 
         _creditsText = GameObject.Find("PlayerCredits").GetComponent<TextMeshProUGUI>();
         _dashCooldownInfo = GameObject.Find("DashUpgradeInfo").GetComponent<TextMeshProUGUI>();
@@ -132,6 +148,8 @@ public class GameManager : MonoBehaviour
         OptionsMenu.SetActive(false);
         PauseMenu.SetActive(false);
         OptionsMenuPause.SetActive(false);
+        _startmusic.Stop();
+        _playingmusic.Play();
     }
     public void Pause()
     {
@@ -141,6 +159,7 @@ public class GameManager : MonoBehaviour
         mainMenu.SetActive(false);
         OptionsMenu.SetActive(false);
         OptionsMenuPause.SetActive(false);
+         _playingmusic.Stop();
     }
     public void Options()
     {
@@ -175,6 +194,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
         isgamestarted = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+         _playingmusic.Stop();
     }
     public void backtogame()
     {
@@ -184,6 +204,7 @@ public class GameManager : MonoBehaviour
         OptionsMenu.SetActive(false);
         PauseMenu.SetActive(false);
         OptionsMenuPause.SetActive(false);
+        _playingmusic.Play();
     }
     public void backtopause()
     {
@@ -232,16 +253,16 @@ public class GameManager : MonoBehaviour
 
         if (index < 0 || index >= _playerUpgrades.Length)
         {
-            Debug.Log($"FALHA: index inválido. _playerUpgrades.Length = {_playerUpgrades.Length}");
+            Debug.Log($"FALHA: index invï¿½lido. _playerUpgrades.Length = {_playerUpgrades.Length}");
             return;
         }
 
         var pu = _playerUpgrades[index];
-        Debug.Log($"Upgrade: {pu.name} | Selecionados: {pu.UpgradesSelected} | Máximo: {pu.UpgradeCount}");
+        Debug.Log($"Upgrade: {pu.name} | Selecionados: {pu.UpgradesSelected} | Mï¿½ximo: {pu.UpgradeCount}");
 
         if (pu.UpgradesSelected >= pu.UpgradeCount)
         {
-            Debug.Log("FALHA: upgrade já no máximo");
+            Debug.Log("FALHA: upgrade jï¿½ no mï¿½ximo");
             return;
         }
 
@@ -249,11 +270,11 @@ public class GameManager : MonoBehaviour
             ? pu.UpgradeCost
             : pu.UpgradeCost * (int)Mathf.Pow(2, pu.UpgradesSelected);
 
-        Debug.Log($"Custo: {cost} | Créditos: {pu.playerCredits}");
+        Debug.Log($"Custo: {cost} | Crï¿½ditos: {pu.playerCredits}");
 
         if (pu.playerCredits < cost)
         {
-            Debug.Log("FALHA: créditos insuficientes");
+            Debug.Log("FALHA: crï¿½ditos insuficientes");
             return;
         }
 
@@ -283,7 +304,7 @@ public class GameManager : MonoBehaviour
             int nextCost = index == 2
                 ? pu.UpgradeCost
                 : pu.UpgradeCost * (int)Mathf.Pow(2, pu.UpgradesSelected);
-            infoText.text = $"Nível {pu.UpgradesSelected}/{pu.UpgradeCount} — Próximo: {nextCost}";
+            infoText.text = $"Nï¿½vel {pu.UpgradesSelected}/{pu.UpgradeCount} ï¿½ Prï¿½ximo: {nextCost}";
         }
     }
     #endregion
@@ -293,12 +314,13 @@ public class GameManager : MonoBehaviour
     }
     private IEnumerator GameOverDelay()
     {
+       
+        _playingmusic.Stop();
         yield return new WaitForSecondsRealtime(3f);
         GameEvents.Reset();
         DeviceTracker.Reset();
         Time.timeScale = 0f;
         isgamestarted = false;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     public void Shop()
     {
