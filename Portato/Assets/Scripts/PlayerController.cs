@@ -50,9 +50,11 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        _rb.gravityScale = stopped ? 0 : 1;
         float t = Time.deltaTime;
         _steamParticles.transform.position = _playerHead.position;
         if (stopped) return;
+
         if (!GameManager.Instance.isgamestarted) return; 
 
         if (Input.GetMouseButtonDown(0))
@@ -89,21 +91,28 @@ public class PlayerController : MonoBehaviour
     {
         if (Camera.main == null) return;
         Vector2 clickPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        
         float distance = Vector2.Distance(clickPos, _playerTransform.position);
-        if (clickPos.x >= _playerTransform.position.x + 1) return;
+
+        if (clickPos.x >= _playerTransform.position.x + 0.5) return;
         if (distance > _maxDistanceToClick) return;
+
         float t = Mathf.Clamp01(1f - (distance / _maxDistanceToClick));
+
         float force = Mathf.Lerp(0f, _maxForce, t);
         Vector2 direction = ((Vector2)_playerTransform.position - clickPos).normalized;
+        
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
         _playerTransform.rotation = Quaternion.Euler(0, 0, angle);
         _rb.rotation = 0f;
+        
         _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, 0);
         _rb.AddForce(direction * force, ForceMode2D.Impulse);
+
         if (_rb.linearVelocity.magnitude > _maxVelocity)
             _rb.linearVelocity = _rb.linearVelocity.normalized * _maxVelocity;
         if (_playerTransform.position.x > _leftBoundX)
-            _leftBoundX = _playerTransform.position.x - 15f;
+            _leftBoundX = _playerTransform.position.x - 30f;
 
         GameEvents.DrainEnergy(10f * t * CoreManager.Instance.consumoMult);
     }
@@ -134,6 +143,5 @@ public class PlayerController : MonoBehaviour
             col.GetComponent<Station>().StartInteraction(this);
         }
     }
-
     public void Resume() => stopped = false;
 }

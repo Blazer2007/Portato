@@ -1,7 +1,8 @@
 using System.Collections;
 using UnityEngine;
 
-public class Station : MonoBehaviour {
+public class Station : MonoBehaviour
+{
     [SerializeField] float interactionTime = 2f;
     [SerializeField] Sprite _activatedSprite;
     

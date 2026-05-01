@@ -16,7 +16,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject OptionsMenuPause;
     [SerializeField] private GameObject PauseMenu;
     [SerializeField] private GameObject GameOverMenu;
-    [SerializeField] private ScriptableFloat PlayerEnergy;
+    [SerializeField] private ScriptableFloat _playerEnergy;
+    [SerializeField] private ScriptableFloat _playerCredits;
     [SerializeField] private CoreManager _coreManager;
     [SerializeField] private GameObject _dashCoolDownPanel;
     [SerializeField] private GameObject _EnergyEconPanel;
@@ -49,6 +50,19 @@ public class GameManager : MonoBehaviour
             GameOverMenu.SetActive(false);
         }
 
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("MainScene") && mainMenu.activeSelf == true)
+        {
+            _startmusic.Play();
+            _playingmusic.Stop();
+        }
+        else if (GameManager.Instance.isgamestarted) 
+        {
+            _playingmusic.Play();
+            _startmusic.Stop();
+        }
+
+        
+         
     }
     void Update()
     {
@@ -65,6 +79,16 @@ public class GameManager : MonoBehaviour
 
         }
     }
+    void ActivateCheat()
+    {
+        foreach (var pu in _playerUpgrades)
+            pu.playerCredits += 10000;
+
+        if (_creditsText != null)
+            _creditsText.text = "Points: " + _playerUpgrades[0].playerCredits.ToString();
+
+        Debug.Log("Cheatcode ativado � +10000 creditos!");
+    }
 
     public void Start()
     {
@@ -72,6 +96,14 @@ public class GameManager : MonoBehaviour
         Debug.Log("GameManager Start chamado, pontos: " + GameEvents.Points);
         _creditsText = GameObject.Find("PlayerCredits").GetComponent<TextMeshProUGUI>();
         Debug.Log("_creditsText encontrado: " + (_creditsText != null));
+        PlayerPrefs.DeleteAll();
+        UpdatePointsUI(GameEvents.Points);
+
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("MainScene"))
+        { 
+            _actualRunPointsText = GameObject.Find("ActualRunPoints").GetComponent<TextMeshProUGUI>();
+            _maxPointsText = GameObject.Find("MaxPoints").GetComponent<TextMeshProUGUI>();
+        }
         
         _actualRunPointsText = GameObject.Find("ActualRunPoints").GetComponent<TextMeshProUGUI>();
         _maxPointsText = GameObject.Find("MaxPoints").GetComponent<TextMeshProUGUI>();
@@ -229,6 +261,62 @@ public class GameManager : MonoBehaviour
 
         int[] multipliers = { 1, 2, 4 };
         int cost = upgrade.price * multipliers[upgrade.upgradesSelected];
+        if (index < 0 || index >= _playerUpgrades.Length)
+        {
+            Debug.Log($"FALHA: index inv�lido. _playerUpgrades.Length = {_playerUpgrades.Length}");
+            return;
+    public void BuyUpgradeByIndex(int index)
+    {
+        if (index < 0 || index >= _playerUpgrades.Length) return;
+
+        var pu = _playerUpgrades[index];
+
+        // Verifica se j� comprou o m�ximo
+        if (pu.UpgradesSelected >= pu.UpgradeCount) return;
+
+        // Calcula o custo baseado no n�vel atual
+        int cost = index == 2
+            ? pu.UpgradeCost                          // SlowFall: pre�o fixo
+            : pu.UpgradeCost * (int)Mathf.Pow(2, pu.UpgradesSelected); // 1x, 2x, 4x
+
+        // Verifica se tem cr�ditos suficientes
+        if (pu.playerCredits < cost) return;
+
+        // Desconta cr�ditos diretamente no ScriptableObject
+        pu.playerCredits -= cost;
+
+        // Atualiza texto de cr�ditos
+        if (_creditsText != null)
+            _creditsText.text = pu.playerCredits.ToString();
+
+        // Aplica o upgrade no CoreManager (efeito + sprite)
+        CoreManager.Instance.ApplyUpgrade(index);
+
+        // Atualiza os textos de info
+        UpdateUpgradeInfoText(index, pu);
+    }
+
+    void UpdateUpgradeInfoText(int index, PlayerUpgrades pu)
+    {
+        TextMeshProUGUI infoText = index switch
+        {
+            0 => _energyEconInfo,
+            1 => _dashCooldownInfo,
+            2 => _slowFallInfo,
+            _ => null
+        };
+
+        if (infoText == null) return;
+
+        if (pu.UpgradesSelected >= pu.UpgradeCount)
+            infoText.text = "MAX";
+        else
+        {
+            int nextCost = index == 2
+                ? pu.UpgradeCost
+                : pu.UpgradeCost * (int)Mathf.Pow(2, pu.UpgradesSelected);
+            infoText.text = $"N�vel {pu.UpgradesSelected}/{pu.UpgradeCount} � Pr�ximo: {nextCost}";
+        }
 
         if (GameEvents.Points < cost) return;
 

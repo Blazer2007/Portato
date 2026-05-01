@@ -87,6 +87,9 @@ public class CoreManager : MonoBehaviour
             floatTimer -= Time.deltaTime;
             if (floatTimer <= 0) _playerRB.gravityScale = 1f;
         }
+        Debug.Log($"Eficiência energética: consumoMult = {consumoMult}");
+        Debug.Log($"Dash cooldown: {dashCooldown}s | Dash force: {dashForce}");
+        Debug.Log($"Slow fall duration: {floatDuration}s");
     }
 
     void UpdateEnergyUI(float val) => energyBar.value = val / 100f;

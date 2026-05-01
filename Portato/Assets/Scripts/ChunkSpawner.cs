@@ -5,7 +5,7 @@ public class ChunkSpawner : MonoBehaviour
 {
     [SerializeField] GameObject[] _chunkPrefabs;
     [SerializeField] Transform _player;
-    [SerializeField] float _chunkWidth = 21.6f;
+    [SerializeField] float _chunkWidth = 78f;
     float _lastChunkTpBuffer = 30f;
     [SerializeField] int _totalChunks = 5; // quantos chunks existem em cena
 

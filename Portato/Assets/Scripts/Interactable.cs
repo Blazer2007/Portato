@@ -9,6 +9,7 @@ public class Interactable : MonoBehaviour
     [SerializeField] float value = 20f;        // drain, força, energia requerida
     [SerializeField] float rate = 15f;        // só para Peeler e WaterPot
     bool active = false;
+    
     Rigidbody2D potatoRb;
 
     void OnTriggerEnter2D(Collider2D col)
@@ -32,7 +33,6 @@ public class Interactable : MonoBehaviour
                 potatoRb.AddForce(dir * value); break;
         }
     }
-
     void OnTriggerExit2D(Collider2D col)
     {
         if (col.CompareTag("Player")) { active = false; potatoRb = null; }
@@ -48,7 +48,7 @@ public class Interactable : MonoBehaviour
                 GameEvents.RechargeEnergy(rate * Time.fixedDeltaTime); break;
 
             case InteractableType.Peeler:
-                GameEvents.DrainEnergy(rate * Time.fixedDeltaTime); break;
+                GameEvents.DrainEnergy(rate * Time.fixedDeltaTime * 2); break;
         }
     }
 }
